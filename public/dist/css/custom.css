@@ -1,0 +1,155 @@
+.card-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+.navbar{
+    background-color: #ffccd5;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 2;
+    transform: translateY(0);
+  }
+}
+
+/* Custom styling hanya untuk class 'card-style' */
+.card-style {
+    height: auto; /* Sesuaikan tinggi */
+}
+
+.card-style .circle-bg {
+    background-color: #ffffff; /* Background putih */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Shadow lembut */
+    width: 30px;
+    height: 30px;
+    border-radius: 10px; /* Radius 10px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Border halus */
+}
+
+.card-style .number-text {
+    color: #000000; /* Warna teks hitam */
+    font-size: 0.875rem; /* Ukuran font lebih kecil */
+    line-height: 1;
+}
+
+/* Atur card body */
+.card-style .card-body {
+    padding: 10px; /* Padding yang lebih kecil */
+}
+
+/* Atur judul card */
+.card-style .card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 200px; /* Batasi panjang teks */
+    max-height: 2.4rem; /* Batasi tinggi */
+    overflow: hidden;
+    white-space: normal; /* Izinkan teks membungkus */
+    text-overflow: clip;
+}
+
+/* Styling khusus untuk layar laptop dan lebih besar */
+@media (min-width: 1024px) {
+    /* Atur parent untuk membuat card di tengah layar */
+    .card-style-wrapper {
+        display: flex;
+        justify-content: center; /* Pusatkan secara horizontal */
+        align-items: center; /* Pusatkan secara vertikal */
+        height: 100vh; /* Tinggi penuh layar */
+    }
+
+    .card-style {
+        max-width: 600px; /* Lebar card lebih besar untuk laptop */
+    }
+
+    .card-style .circle-bg {
+        width: 40px; /* Ukuran lingkaran lebih besar */
+        height: 40px;
+    }
+
+    .card-style .number-text {
+        font-size: 1rem; /* Ukuran teks lingkaran lebih besar */
+    }
+
+    .card-style .card-title {
+        font-size: 1rem; /* Teks lebih besar untuk laptop */
+        max-width: 350px; /* Batasi panjang teks */
+    }
+
+    .card-style .card-body {
+        padding: 15px; /* Tambahkan padding untuk kenyamanan visual */
+    }
+}
+
+
+/* Card Hover */
+.card-style:hover, .card-hamil.hover {
+    background-color: #d3d3d3; /* Warna abu-abu saat hover */
+}
+
+/* Card yang dipilih */
+.card-style.selected, .card-hamil.selected {
+    background-color: #d3d3d3; /* Warna abu-abu saat terpilih */
+}
+
+/* Efek transisi */
+.card-style, .card-hamil{
+    transition: background-color 0.3s ease; /* Efek transisi */
+}
+
+
+.card.selected {
+    border: 2px solid #007bff; /* Misalnya menambah border biru pada kartu yang dipilih */
+}
+.card.disabled {
+    opacity: 0.5; /* Menurunkan opasitas untuk kartu yang dinonaktifkan */
+    pointer-events: none; /* Menonaktifkan interaksi dengan kartu yang dinonaktifkan */
+}
+
+
+
+
+/* ketika diukuran hp background warna dari navbarNav menjadi hitam */
+@media (max-width: 768px) {
+    .navbar{
+        background-color: #ffffff;
+        box-shadow: none;
+    }
+  #navbarNav {
+    background-color: #ffccd5;
+    /* shadow bottom*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.selected{
+    background-color: #ffccd5;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contentKondom {
+    display: none; /* Sembunyikan carousel secara default */
+}
+
+#contentPil {
+    display: none; /* Sembunyikan carousel secara default */
+}
+
+#contentSenggamaPutus {
+    display: none; /* Sembunyikan carousel secara default */
+}
