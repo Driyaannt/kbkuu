@@ -792,7 +792,13 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="col-md-12 col-12 card">
+                                <div class="card-body">
+                                    <h5 class="text-success">Kesimpulan</h5>
+                                    <p>Setelah membaca rekomendasi di atas, Anda dapat memilih metode KB yang sesuai dengan kebutuhan dan kondisi kesehatan Anda. Jika Anda masih ragu, konsultasikan dengan dokter atau bidan untuk mendapatkan saran yang lebih spesifik.</p>
+                                      <a href="http://wa.link/752ysq" class="btn btn-success">Hubungi Kami!</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                       </div>

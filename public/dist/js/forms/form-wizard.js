@@ -197,7 +197,6 @@ $(".validation-wizard").steps({
                     })
                     .then((data) => {
                         console.log('Data berhasil dikirim:', data);
-
                         // SweetAlert untuk pemberitahuan sukses
                         Swal.fire({
                             title: 'Berhasil!',

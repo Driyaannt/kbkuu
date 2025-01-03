@@ -29,24 +29,25 @@ class HomeController extends Controller
 }
 
 
-    public function saveFormData(Request $request)
-{
-    // Validasi data
-    $validatedData = $request->validate([
-        'nama_akseptor' => 'required|string|max:255',
-        'nama_suami' => 'required|string|max:255',
-        'pendidikan_terakhir' => 'required|string|max:255',
-        'tujuan_kb' => 'required|string|max:255',
-        'no_hp' => 'required|numeric',
-        'alamat' => 'required|string|max:255',
-    ]);
+public function saveFormData(Request $request)
+    {
+        // Validasi data
+        $validatedData = $request->validate([
+            'nama_akseptor' => 'required|string|max:255',
+            'nama_suami' => 'required|string|max:255',
+            'pendidikan_terakhir' => 'required|string|max:255',
+            'tujuan_kb' => 'required|string|max:255',
+            'no_hp' => 'required|numeric|digits_between:10,15',
+            'alamat' => 'required|string|max:255',
+        ]);
 
-    // Simpan data ke session
-    session(['data_diri' => $validatedData]);
+        // Simpan data ke session
+        session(['data_diri' => $validatedData]);
 
-    // Redirect ke halaman berikutnya
-    return redirect()->route('menu'); // Ganti dengan route yang sesuai
-}
+        // Redirect ke halaman berikutnya dengan flash message
+        return redirect()->route('menu')->with('success', 'Data berhasil dimasukkan!');
+    }
+
 
 
 }
