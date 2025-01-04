@@ -2,39 +2,85 @@
 
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<div class="card shadow-none position-relative overflow-hidden mt-3 card-container animate__animated animate__fadeInUp" style="background-color: #fff0f3">
-    <div class="card-body px-4 py-3">
-      <div class="row align-items-center">
-        <div class="col-9">
-          <h4 class="fw-semibold mb-8">Book ABPK</h4>
-        </div>
-        <div class="col-3">
-          <div class="text-center mb-n5">
-            <img src="{{ asset('assets/images/bidan.png') }}" alt="" class="img-fluid mb-n4">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container mt-4">
-     <!-- PDF Viewer Responsif -->
-     <div class="ratio ratio-1x1 d-sm-none">
-        <!-- Tampilan untuk perangkat kecil (HP) -->
-        <iframe
-            src="{{ asset('file/book-abpk.pdf') }}"
-            allowfullscreen
-            style="border: none;">
-        </iframe>
-    </div>
-    <div class="ratio ratio-16x9 d-none d-sm-block">
-        <!-- Tampilan untuk perangkat lebih besar -->
-        <iframe
-            src="{{ asset('file/book-abpk.pdf') }}"
-            allowfullscreen
-            style="border: none;">
-        </iframe>
-    </div>
 
+<div class="card shadow-none position-relative overflow-hidden mt-3 card-container" style="background-color: #fff0f3">
+    <div class="card-body px-4 py-3">
+        <div class="row align-items-center">
+            <div class="col-9">
+                <h4 class="fw-semibold mb-8">Book ABPK</h4>
+            </div>
+            <div class="col-3">
+                <div class="text-center mb-n5">
+                    <img src="{{ asset('assets/images/bidan.png') }}" alt="" class="img-fluid mb-n4">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-semibold">Book ABPK</h5>
+                    <p class="text-muted mb-0">
+                        Buku ini berisi materi-materi yang berkaitan dengan ABPK
+                    </p>
+                    <div class="d-flex gap-2 mt-4">
+                        <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                        <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-sm">
+                            <i class="bi bi-eye"></i> Read With Tools
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pdfContainer" style="height: 100vh; width: 100%; overflow: auto;"></div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.8.162/pdf.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const url = '{{ asset("file/book-abpk.pdf") }}';
+    const pdfContainer = document.getElementById('pdfContainer');
+
+    // Dapatkan ukuran kontainer
+    const containerWidth = pdfContainer.clientWidth;
+
+    // Muat dokumen PDF
+    const loadingTask = pdfjsLib.getDocument(url);
+    loadingTask.promise.then(pdf => {
+        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+            pdf.getPage(pageNumber).then(page => {
+                // Hitung skala berdasarkan lebar kontainer
+                const viewport = page.getViewport({ scale: 1.0 });
+                const scale = containerWidth / viewport.width; // Skala agar pas dengan lebar kontainer
+                const scaledViewport = page.getViewport({ scale });
+
+                // Buat elemen canvas
+                const canvas = document.createElement('canvas');
+                canvas.style.marginBottom = '10px';
+
+                const context = canvas.getContext('2d');
+                canvas.width = scaledViewport.width;
+                canvas.height = scaledViewport.height;
+
+                pdfContainer.appendChild(canvas);
+
+                // Render halaman PDF ke canvas
+                page.render({ canvasContext: context, viewport: scaledViewport });
+            });
+        }
+    }).catch(error => {
+        console.error('Error loading PDF:', error);
+    });
+});
+
+</script>
 
 @endsection
