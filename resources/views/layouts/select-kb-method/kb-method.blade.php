@@ -340,6 +340,7 @@
 
                       <hr class="mt-0 mb-2" />
                       <div class="card-body">
+                        <h5 class="mb-3 mt-2 text-danger">Klik dibawah untuk keterangan metode kbnya! </h5>
                         <div class="row">
                             <!-- Tombol dan kolaps pertama -->
                             <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp mb-3" id="contentKondom">
@@ -365,7 +366,7 @@
                                     </div>
                                 </a>
                                 <!-- Konten collaps pertama -->
-                                <div class="collapse show multi-collapse mt-2" id="multiCollapseExample1" id="contentKondom">
+                                <div class="collapse multi-collapse mt-2" id="multiCollapseExample1" id="contentKondom">
                                     <div class="card card-body">
                                         <h5 class="text-danger">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -426,7 +427,7 @@
                                 </a>
 
                                 <!-- Konten collaps kedua -->
-                                <div class="collapse show multi-collapse mt-2" id="multiCollapseExample2" id="contentSenggamaPutus">
+                                <div class="collapse multi-collapse mt-2" id="multiCollapseExample2" id="contentSenggamaPutus">
                                     <div class="card card-body">
                                         <h5 class="text-danger">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -481,7 +482,7 @@
                                 </a>
 
                                 <!-- Konten collaps Ketiga -->
-                                <div class="collapse show multi-collapse mt-2" id="multiCollapseExample3" id="contentPilKb">
+                                <div class="collapse multi-collapse mt-2" id="multiCollapseExample3" id="contentPilKb">
                                     <div class="card card-body">
                                         <h5 class="text-danger">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -555,7 +556,7 @@
                                 </a>
 
                                 <!-- Konten collaps Ketiga -->
-                                <div class="collapse show multi-collapse mt-2" id="multiCollapseExample4" id="contentIud">
+                                <div class="collapse multi-collapse mt-2" id="multiCollapseExample4" id="contentIud">
                                     <div class="card card-body">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -638,7 +639,7 @@
                                 </a>
 
                                 <!-- Konten collaps Ketiga -->
-                                <div class="collapse show multi-collapse mt-5" id="multiCollapseExample5" id="contenImplan">
+                                <div class="collapse multi-collapse mt-5" id="multiCollapseExample5" id="contenImplan">
                                     <div class="card card-body">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -719,7 +720,7 @@
                                 </a>
 
                                 <!-- Konten collaps Ketiga -->
-                                <div class="collapse show multi-collapse mt-2" id="multiCollapseExample6" id="contenSuntik">
+                                <div class="collapse multi-collapse mt-2" id="multiCollapseExample6" id="contenSuntik">
                                     <div class="card card-body">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -794,7 +795,7 @@
                                 </a>
 
                                 <!-- Konten collaps Ketiga -->
-                                <div class="collapse show multi-collapse mt-2" id="multiCollapseExample7" id="contentSteril">
+                                <div class="collapse multi-collapse mt-2" id="multiCollapseExample7" id="contentSteril">
                                     <div class="card card-body">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
@@ -845,6 +846,46 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-12 col-12 card p-4">
+                            <div class="row gy-3"> <!-- Mengurangi jarak vertikal antar elemen -->
+                                <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp">
+                                    <div class="mb-2">
+                                        <h6 class="text-primary fw-bold">1. Apa Saja Cara Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
+                                    </div>
+                                    <!-- Video YouTube embed -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" width="100%" height="315"
+                                            src="https://www.youtube.com/embed/m4cs1_3DsCo?si=sySWpi_9sI9JEWaM"
+                                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp">
+                                    <div class="mb-2">
+                                        <h6 class="text-primary fw-bold">2. Menggunakan Hormon untuk Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
+                                    </div>
+                                    <!-- Video YouTube embed -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" width="100%" height="315"
+                                            src="https://www.youtube.com/embed/Fxrphc-qDUQ?si=Zu_E39MipdwQf7q1"
+                                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                                {{-- <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp">
+                                    <div class="mb-2">
+                                        <h6 class="text-primary fw-bold">2. Menggunakan Hormon untuk Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
+                                    </div>
+                                    <video width="100%" controls>
+                                        <source src="{{ asset('assets/video/neuron-part2.mp4') }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div> --}}
+                            </div>
+                        </div>
+
+
                         <div class="col-md-12 col-12 card">
                             <div class="card-body">
                                 <h5 class="text-success">Kesimpulan</h5>
@@ -853,7 +894,6 @@
                             </div>
                         </div>
                     </div>
-                      </div>
                   </form>
 
                 </div>
@@ -1101,22 +1141,26 @@
 
     console.log('CSRF Token:', csrfToken);
 
-   document.addEventListener("DOMContentLoaded", function () {
-    fetch("{{ route('get-form-data') }}")
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Data fetched:", data);
-
-            // Perbarui elemen dengan data
-            document.getElementById('nama-akseptor').innerText = data.nama_akseptor || '';
-            document.getElementById('nama-suami').innerText = data.nama_suami || '';
-            document.getElementById('pendidikan-terakhir').innerText = data.pendidikan_terakhir || '';
-            document.getElementById('tujuan-kb').innerText = data.tujuan_kb || '';
-            document.getElementById('no-hp').innerText = data.no_hp || '';
-            document.getElementById('alamat').innerText = data.alamat || '';
-            saveToLocalStorage('formData', data);
-        })
-        .catch((error) => console.error("Error fetching data:", error));
+    document.addEventListener("DOMContentLoaded", function () {
+    console.log("Page Loaded");
+    const iframe = document.querySelector("iframe");
+    console.log("Iframe loaded:", iframe);
+    iframe.onload = function() {
+        console.log("Iframe has finished loading, now fetching data...");
+        fetch("{{ route('get-form-data') }}")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Data fetched:", data);
+                document.getElementById('nama-akseptor').innerText = data.nama_akseptor || '';
+                document.getElementById('nama-suami').innerText = data.nama_suami || '';
+                document.getElementById('pendidikan-terakhir').innerText = data.pendidikan_terakhir || '';
+                document.getElementById('tujuan-kb').innerText = data.tujuan_kb || '';
+                document.getElementById('no-hp').innerText = data.no_hp || '';
+                document.getElementById('alamat').innerText = data.alamat || '';
+                saveToLocalStorage('formData', data);
+            })
+            .catch((error) => console.error("Error fetching data:", error));
+    };
 });
 
     // Fungsi untuk menyimpan data ke localStorage
