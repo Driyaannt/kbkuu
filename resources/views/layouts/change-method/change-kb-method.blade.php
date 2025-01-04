@@ -845,9 +845,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-12 card p-4">
+                        <div class="col-md-12 col-12  p-4">
                             <div class="row gy-3"> <!-- Mengurangi jarak vertikal antar elemen -->
-                                <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp">
+                                <div class="col-md-6 col-12">
                                     <div class="mb-2">
                                         <h6 class="text-primary fw-bold">1. Apa Saja Cara Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
                                     </div>
@@ -859,7 +859,7 @@
                                         </iframe>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp">
+                                <div class="col-md-6 col-12">
                                     <div class="mb-2">
                                         <h6 class="text-primary fw-bold">2. Menggunakan Hormon untuk Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
                                     </div>
