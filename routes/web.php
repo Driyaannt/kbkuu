@@ -32,7 +32,6 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 // route kb-method
-
 Route::get('/kb-method', [MetodeKBController::class, 'index'])->name('kb-method');
 Route::get('/change-method', [MetodeKBController::class, 'ChangeMethod'])->name('change-method');
 Route::get('/post-abortion', [MetodeKBController::class, 'postAbortion'])->name('post-abortion');
@@ -53,6 +52,11 @@ Route::get('/check-session', function () {
         'session_data' => session()->all()  // Menampilkan semua data sesi
     ]);
 });
+
+// router pdf
+Route::get('/book-abpk', function () {
+    return view('layouts.book-abpk.book-abpk');
+})->name('book-abpk');
 
 
 // route Admin
