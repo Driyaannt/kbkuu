@@ -38,6 +38,15 @@
     <div class="container">
         @yield('content')
     </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #FFCCD5 !important; color: white !important;">
+            <p class="text-dark mt-3 fw-bold">By Nesya | © 2025 KBKUU. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 
 <!-- Core JS Libraries -->

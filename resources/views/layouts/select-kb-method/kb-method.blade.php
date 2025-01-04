@@ -873,15 +873,6 @@
                                         </iframe>
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-6 col-12 card-container animate__animated animate__fadeInUp">
-                                    <div class="mb-2">
-                                        <h6 class="text-primary fw-bold">2. Menggunakan Hormon untuk Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
-                                    </div>
-                                    <video width="100%" controls>
-                                        <source src="{{ asset('assets/video/neuron-part2.mp4') }}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div> --}}
                             </div>
                         </div>
 
