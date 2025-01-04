@@ -12,11 +12,11 @@
                     Buku ini berisi materi-materi yang berkaitan dengan ABPK
                 </p>
                 <div class="d-flex gap-2 mt-2">
-                    <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
+                    {{-- <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
                         <i class="bi bi-download"></i> Download
-                    </a>
-                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-sm" target="_blank>
-                        <i class="bi bi-eye"></i> Read With Tools
+                    </a> --}}
+                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-md">
+                        <i class="bi bi-eye"></i> Download
                     </a>
                 </div>
             </div>
