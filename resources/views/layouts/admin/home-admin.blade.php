@@ -168,7 +168,7 @@
                                 <td>{{ $row->age_category }}</td>
                                 <td>{{ $row->medical_history }}</td>
                                 <td>{{ $row->recommended_methods }}</td>
-                                <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }} jam {{ \Carbon\Carbon::parse($row->created_at)->format('H:i') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</td>
                             </tr>
                             @endforeach
                         </tbody>
