@@ -69,7 +69,7 @@
                   </a>
                 </li>
                 <li class="nav-item d-none d-xl-block">
-                  <a href="route('home')" class="text-nowrap nav-link">
+                    <a href="{{ route('home') }}" class="text-nowrap nav-link">Home</a>
                     <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
                     <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
                   </a>
