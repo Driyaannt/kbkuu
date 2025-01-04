@@ -15,7 +15,7 @@
                     <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
                         <i class="bi bi-download"></i> Download
                     </a>
-                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-sm">
+                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-sm" target="_blank>
                         <i class="bi bi-eye"></i> Read With Tools
                     </a>
                 </div>
