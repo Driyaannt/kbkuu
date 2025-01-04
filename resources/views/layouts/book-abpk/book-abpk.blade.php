@@ -17,13 +17,24 @@
     </div>
   </div>
   <div class="container mt-4">
-    <div class="ratio ratio-16x9">
+     <!-- PDF Viewer Responsif -->
+     <div class="ratio ratio-1x1 d-sm-none">
+        <!-- Tampilan untuk perangkat kecil (HP) -->
         <iframe
             src="{{ asset('file/book-abpk.pdf') }}"
             allowfullscreen
             style="border: none;">
         </iframe>
     </div>
+    <div class="ratio ratio-16x9 d-none d-sm-block">
+        <!-- Tampilan untuk perangkat lebih besar -->
+        <iframe
+            src="{{ asset('file/book-abpk.pdf') }}"
+            allowfullscreen
+            style="border: none;">
+        </iframe>
+    </div>
+
 </div>
 
 
