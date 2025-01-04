@@ -8,6 +8,17 @@
         <div class="row align-items-center">
             <div class="col-9">
                 <h4 class="fw-semibold mb-8">Book ABPK</h4>
+                <p class="text-muted mb-0">
+                    Buku ini berisi materi-materi yang berkaitan dengan ABPK
+                </p>
+                <div class="d-flex gap-2 mt-2">
+                    <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-md" download>
+                        <i class="bi bi-download"></i> Download
+                    </a>
+                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-md">
+                        <i class="bi bi-eye"></i> Read With Tools
+                    </a>
+                </div>
             </div>
             <div class="col-3">
                 <div class="text-center mb-n5">
@@ -19,7 +30,7 @@
 </div>
 
 <div class="container mt-4">
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
@@ -38,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div id="pdfContainer" style="height: 100vh; width: 100%; overflow: auto;"></div>
 </div>
 
