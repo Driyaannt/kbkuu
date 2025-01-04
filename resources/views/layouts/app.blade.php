@@ -66,6 +66,7 @@
 <script src="{{ asset('dist/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('dist/js/forms/form-wizard.js') }}"></script>
 
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

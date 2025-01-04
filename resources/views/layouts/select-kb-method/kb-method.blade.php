@@ -2,7 +2,7 @@
 
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<div class="card bg-light-info shadow-none position-relative overflow-hidden mt-3 card-container animate__animated animate__fadeInUp">
+<div class="card bg-light-info shadow-none position-relative overflow-hidden mt-3 card-container animate__animated animate__fadeInUp" style="background-color: #fff0f3 !important">
     <div class="card-body px-4 py-3">
       <div class="row align-items-center">
         <div class="col-9">
