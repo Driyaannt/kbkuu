@@ -12,10 +12,10 @@
                     Buku ini berisi materi-materi yang berkaitan dengan ABPK
                 </p>
                 <div class="d-flex gap-2 mt-2">
-                    <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-md" download>
+                    <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
                         <i class="bi bi-download"></i> Download
                     </a>
-                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-md">
+                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-sm">
                         <i class="bi bi-eye"></i> Read With Tools
                     </a>
                 </div>
@@ -30,26 +30,6 @@
 </div>
 
 <div class="container mt-4">
-    {{-- <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-12">
-                    <h5 class="fw-semibold">Book ABPK</h5>
-                    <p class="text-muted mb-0">
-                        Buku ini berisi materi-materi yang berkaitan dengan ABPK
-                    </p>
-                    <div class="d-flex gap-2 mt-4">
-                        <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
-                            <i class="bi bi-download"></i> Download
-                        </a>
-                        <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-sm">
-                            <i class="bi bi-eye"></i> Read With Tools
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <div id="pdfContainer" style="height: 100vh; width: 100%; overflow: auto;"></div>
 </div>
 
