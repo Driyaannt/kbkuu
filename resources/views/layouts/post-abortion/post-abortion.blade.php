@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-6" id="card2">
+                <div class="col-md-5 col-lg-5" id="card2">
                     <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'OBESITAS IMT >27')">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
@@ -100,8 +100,19 @@
                                     <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">OBESITAS IMT >27</h6>
                                 </div>
                             </div>
+                            <div id="bmi-badge" class="badge mt-1"></div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-1 col-lg-1 mb-3">
+                    <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#vertical-center-modal"
+                    >
+                    Open BMI
+                    </button>
                 </div>
 
                 <div class="col-md-6 col-lg-6 card-hover" id="card3">

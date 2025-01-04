@@ -130,7 +130,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-6" id="card2">
+                <div class="col-md-5 col-lg-5" id="card2">
                     <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'OBESITAS IMT >27')">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
@@ -142,8 +142,19 @@
                                     <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">OBESITAS IMT >27</h6>
                                 </div>
                             </div>
+                            <div id="bmi-badge" class="badge mt-1"></div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-1 col-lg-1 mb-3">
+                    <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#vertical-center-modal"
+                    >
+                    Open BMI
+                    </button>
                 </div>
 
                 <div class="col-md-6 col-lg-6 card-hover" id="card3">
@@ -922,86 +933,166 @@
 
 
                       <script>
-                        let bmiChart;
+                        let bmiChart; // Variabel untuk menyimpan instance chart
 
-                        document.getElementById('calculateBMI').addEventListener('click', function () {
-                          const weight = parseFloat(document.getElementById('weight').value);
-                          const heightInCm = parseFloat(document.getElementById('height').value);
+                        document.getElementById('calculateBMI').addEventListener('click', function() {
+                            // Ambil nilai dari input
+                            const weight = parseFloat(document.getElementById('weight').value);
+                            const heightInCm = parseFloat(document.getElementById('height').value);
 
-                          if (isNaN(weight) || isNaN(heightInCm) || weight <= 0 || heightInCm <= 0) {
+                            // Validasi input
+                            if (isNaN(weight) || isNaN(heightInCm) || weight <= 0 || heightInCm <= 0) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Invalid Input',
+                                    text: 'Please enter valid weight and height values.',
+                                });
+                                return;
+                            }
+
+                            // Konversi tinggi badan dari cm ke m
+                            const heightInM = heightInCm / 100;
+
+                            // Hitung BMI
+                            const bmi = weight / (heightInM * heightInM);
+                            let bmiCategory = '';
+
+                            // Tentukan kategori BMI
+                            if (bmi < 18.5) {
+                                bmiCategory = 'Underweight';
+                            } else if (bmi >= 18.5 && bmi < 25.0) {
+                                bmiCategory = 'Normal weight';
+                            } else {
+                                bmiCategory = 'Obesity';
+                            }
+
+                            // Tampilkan hasil menggunakan SweetAlert2
                             Swal.fire({
-                              icon: 'error',
-                              title: 'Invalid Input',
-                              text: 'Please enter valid weight and height values.',
+                                icon: 'info',
+                                title: 'Your BMI Result',
+                                text: `Your BMI is ${bmi.toFixed(2)} which is considered ${bmiCategory}.`,
                             });
-                            return;
-                          }
 
-                          const heightInM = heightInCm / 100;
-                          const bmi = weight / (heightInM * heightInM);
-                          const bmiCategory =
-                            bmi < 18.5 ? 'Underweight' : bmi < 25.0 ? 'Normal weight' : 'Obesity';
+                            // Tampilkan hasil BMI dan kategori di badge
+                            const bmiBadge = document.getElementById('bmi-badge');
+                            bmiBadge.textContent = `BMI: ${bmi.toFixed(2)} (${bmiCategory})`;
 
-                          // Update badge
-                          const bmiBadge = document.getElementById('bmi-badge');
-                          bmiBadge.textContent = `BMI: ${bmi.toFixed(2)} (${bmiCategory})`;
-                          bmiBadge.className = 'badge';
-                          bmiBadge.classList.add(
-                            bmiCategory === 'Underweight' ? 'bg-info' :
-                            bmiCategory === 'Normal weight' ? 'bg-success' : 'bg-danger'
-                          );
+                            // Sesuaikan warna badge berdasarkan kategori BMI
+                            bmiBadge.className = 'badge'; // Reset kelas
+                            if (bmiCategory === 'Underweight') {
+                                bmiBadge.classList.add('bg-info');
+                            } else if (bmiCategory === 'Normal weight') {
+                                bmiBadge.classList.add('bg-success');
+                            } else {
+                                bmiBadge.classList.add('bg-danger');
+                            }
 
-                          // Update chart
-                          if (bmiChart) bmiChart.destroy();
-                          const ctx = document.getElementById('bmiChart').getContext('2d');
-                          bmiChart = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                              labels: ['Underweight', 'Normal weight', 'Obesity'],
-                              datasets: [
-                                {
-                                  label: 'BMI Score',
-                                  data: [18.5, 25.0, 40],
-                                  backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)'],
-                                  borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)'],
-                                  borderWidth: 1,
+                            // Hancurkan grafik sebelumnya jika ada
+                            if (bmiChart) {
+                                bmiChart.destroy();
+                            }
+
+                            // Visualisasi BMI
+                            const ctx = document.getElementById('bmiChart').getContext('2d');
+                            bmiChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Underweight', 'Normal weight', 'Obesity'],
+                                    datasets: [{
+                                        label: 'BMI Score',
+                                        data: [18.5, 25.0, 40], // Batas atas kategori BMI
+                                        backgroundColor: [
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 99, 132, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 99, 132, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    },
+                                    {
+                                        label: 'Your BMI',
+                                        type: 'line',
+                                        data: [bmi, bmi, bmi],
+                                        borderColor: 'rgba(255, 0, 0, 1)',
+                                        backgroundColor: 'rgba(255, 0, 0, 0.2)',
+                                        fill: false,
+                                        borderWidth: 2,
+                                        pointRadius: 5
+                                    }]
                                 },
-                                {
-                                  label: 'Your BMI',
-                                  type: 'line',
-                                  data: [bmi, bmi, bmi],
-                                  borderColor: 'rgba(255, 0, 0, 1)',
-                                  borderWidth: 2,
-                                },
-                              ],
-                            },
-                            options: {
-                              scales: {
-                                y: {
-                                  beginAtZero: true,
-                                  title: {
-                                    display: true,
-                                    text: 'BMI',
-                                  },
-                                },
-                              },
-                            },
-                          });
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            title: {
+                                                display: true,
+                                                text: 'BMI'
+                                            }
+                                        }
+                                    }
+                                }
+                            });
 
-                          // Display BMI Category
-                          document.getElementById('bmiCategory').innerText = `Your BMI category is: ${bmiCategory}`;
+                            // Tampilkan kategori BMI di bawah grafik
+                            document.getElementById('bmiCategory').innerText = `Your BMI category is: ${bmiCategory}`;
                         });
 
-                        document.getElementById('resetBMI').addEventListener('click', function () {
-                          document.getElementById('weight').value = '';
-                          document.getElementById('height').value = '';
-                          if (bmiChart) bmiChart.destroy();
-                          document.getElementById('bmiCategory').innerText = '';
-                          const bmiBadge = document.getElementById('bmi-badge');
-                          bmiBadge.textContent = '';
-                          bmiBadge.className = 'badge';
+                        // Event listener untuk tombol reset
+                        document.getElementById('resetBMI').addEventListener('click', function() {
+                            // Reset input fields
+                            document.getElementById('weight').value = '';
+                            document.getElementById('height').value = '';
+
+                            // Reset chart and category display
+                            if (bmiChart) {
+                                bmiChart.destroy(); // Hancurkan grafik sebelumnya
+                            }
+                            // Render grafik default
+                            const ctx = document.getElementById('bmiChart').getContext('2d');
+                            bmiChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Underweight', 'Normal weight', 'Obesity'],
+                                    datasets: [{
+                                        label: 'BMI Score',
+                                        data: [18.5, 25.0, 40], // Batas atas kategori BMI
+                                        backgroundColor: [
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 99, 132, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 99, 132, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            title: {
+                                                display: true,
+                                                text: 'BMI'
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+
+                            // Reset kategori BMI display
+                            document.getElementById('bmiCategory').innerText = '';
+                            // Reset badge
+                            document.getElementById('bmi-badge').textContent = '';
+                            document.getElementById('bmi-badge').className = 'badge'; // Reset kelas
                         });
-                      </script>
+                    </script>
 
 
 <script>
