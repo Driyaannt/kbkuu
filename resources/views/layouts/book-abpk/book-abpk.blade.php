@@ -37,7 +37,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.8.162/pdf.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const url = '{{ asset("file/book-abpk.pdf") }}';
+    const url = '{{ asset("file/ebook-abpk.pdf") }}';
     const pdfContainer = document.getElementById('pdfContainer');
 
     // Dapatkan ukuran kontainer
