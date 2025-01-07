@@ -15,7 +15,7 @@
                     {{-- <a href="{{ asset('file/book-abpk.pdf') }}" class="btn btn-primary btn-sm" download>
                         <i class="bi bi-download"></i> Download
                     </a> --}}
-                    <a href="https://kbkuu.my-skripsi.my.id/file/ebook-abpk.pdf" class="btn btn-secondary btn-md">
+                    <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-md">
                         <i class="bi bi-eye"></i> Download
                     </a>
                 </div>
@@ -37,7 +37,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.8.162/pdf.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const url = '{{ asset("file/ebook-abpk.pdf") }}';
+    const url = '{{ asset("file/book-abpk.pdf") }}';
     const pdfContainer = document.getElementById('pdfContainer');
 
     // Dapatkan ukuran kontainer
