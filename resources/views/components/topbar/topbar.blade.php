@@ -69,10 +69,10 @@
                   </a>
                 </li>
                 <li class="nav-item d-none d-xl-block">
-                  <a href="{{route('home')}}" class="text-nowrap nav-link">
-                    <img src="{{ asset('assets/icons/Kbkuu.png') }}" class="dark-logo" width="180" alt="" />
-                    <img src="{{ asset('assets/icons/Kbkuu.png') }}" class="light-logo"  width="180" alt="" />
-                  </a>
+                    <a href="{{ request()->routeIs('kuisioner') ? route('homepage') : route('home') }}" class="text-nowrap nav-link">
+                        <img src="{{ asset('assets/icons/Kbkuu.png') }}" class="dark-logo" width="180" alt="" />
+                        <img src="{{ asset('assets/icons/Kbkuu.png') }}" class="light-logo" width="180" alt="" />
+                    </a>
                 </li>
               </ul>
             {{-- <ul class="navbar-nav quick-links d-none d-lg-flex">
@@ -236,24 +236,24 @@
                   </div>
                 </a>
                 <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-                  <li class="nav-item px-2 py-2">
-                    <button
-    type="button"
-    onclick="window.location='{{ route('home') }}';"
-    class="btn mb-1 waves-effect waves-light btn-outline-success {{ request()->routeIs('home') ? 'active' : '' }}">
-    Home
-</button>
-                  </li>
-                  <li class="nav-item">
-                    <button
-                    type="button"
-                    onclick="window.location='{{ route('dashboard') }}';"
-                    class="btn me-3 mb-1 waves-effect waves-light btn-outline-secondary {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    Dashboard
-                </button>
-                  </li>
-
-
+                    @unless(request()->routeIs('kuisioner'))
+                    <li class="nav-item px-2 py-2">
+                        <button
+                            type="button"
+                            onclick="window.location='{{ route('home') }}';"
+                            class="btn mb-1 waves-effect waves-light btn-outline-success {{ request()->routeIs('home') ? 'active' : '' }}">
+                            Home
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            type="button"
+                            onclick="window.location='{{ route('dashboard') }}';"
+                            class="btn me-3 mb-1 waves-effect waves-light btn-outline-secondary {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                            Dashboard
+                        </button>
+                    </li>
+                @endunless
                 </ul>
               </div>
             </div>

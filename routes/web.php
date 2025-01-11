@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MetodeKBController;
+use App\Http\Controllers\KuisionerController;
 use App\Http\Controllers\AdminController;
 
+
 // route home
-Route::get('/', function () {
+Route::get('/homepage', function () {
     if(session()->has('data_diri') || session()->has('select_menu')) {
         session()->forget('data_diri');
         session()->forget('select_menu');
@@ -15,6 +17,15 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/', function () {
+    return view('layouts.homepage.homepage');
+})->name('homepage');
+
+Route::get('/kuisioner', function () {
+    return view('layouts.kuisioner.kuisioner');
+})->name('kuisioner');
+
+Route::post('/save-kuisioner', [KuisionerController::class, 'store'])->name('save-kuisioner');
 
 Route::post('/save-form-data', [HomeController::class, 'saveFormData'])->name('save-form-data');
 Route::post('/section-card', [HomeController::class, 'sectionCard'])->name('section-card');
