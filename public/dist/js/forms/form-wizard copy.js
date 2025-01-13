@@ -151,20 +151,19 @@ $(".validation-wizard").steps({
         // Buat data dengan struktur yang diminta
         const sendData = {
             ResultMethodKB: {
-                nama_akseptor: formData.nama_akseptor,
-                nama_suami: formData.nama_suami,
-                pendidikan_terakhir: formData.pendidikan_terakhir,
-                tujuan_kb: formData.tujuan_kb,
-                no_hp: formData.no_hp,
-                alamat: formData.alamat,
+                nama_akseptor: formData.formData.nama_akseptor,
+                nama_suami: formData.formData.nama_suami,
+                pendidikan_terakhir: formData.formData.pendidikan_terakhir,
+                tujuan_kb: formData.formData.tujuan_kb,
+                no_hp: formData.formData.no_hp,
+                alamat: formData.formData.alamat,
                 condition: formData.selectedCardKondisi,
-                pregnancyStatus: formData.selectedCardHamil || 'Sudah Pernah Hamil',
+                pregnancyStatus: formData.selectedCardHamil,
                 ageCategory: formData.selectedCardUsia,
                 medicalHistory: mappedMedicalHistory,
                 recommendedMethods: mappedRecommendedMethods,
             },
         };
-
 
         console.log('Data yang akan dikirim:', sendData);
 
@@ -201,7 +200,7 @@ $(".validation-wizard").steps({
                         // SweetAlert untuk pemberitahuan sukses
                         Swal.fire({
                             title: 'Berhasil!',
-                            text: 'Data berhasil dikirim.',
+                            text: 'Data berhasil dikirim.',z
                             icon: 'success',
                             confirmButtonText: 'OK',
                         }).then(() => {

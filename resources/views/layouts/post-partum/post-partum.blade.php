@@ -73,11 +73,12 @@
         <h6>Step 2</h6>
         <section>
             <div class="row">
-                <div class="col-md-6 col-lg-6" id="card1">
+                <!-- Card untuk Riwayat Tekanan Darah Tinggi -->
+                <div class="col-md-5 col-lg-5" id="card1">
                     <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center mb-2">
                                 <span class="circle-bg">
                                     <h6 class="number-text mt-2">1</h6>
                                 </span>
@@ -85,9 +86,19 @@
                                     <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)</h6>
                                 </div>
                             </div>
+                            <!-- Badge untuk status tekanan darah -->
+                            <span>Tekanan Darah Anda :</span><div id="hipertensi-badge" class="badge mt-1"></div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tombol untuk Membuka Modal -->
+                <div class="col-md-1 col-lg-1 mb-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-hipertensi">
+                        Open
+                    </button>
+                </div>
+
 
                 <div class="col-md-5 col-lg-5" id="card2">
                     <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'OBESITAS IMT >27')">
@@ -116,8 +127,8 @@
                     </button>
                 </div>
 
-                <div class="col-md-6 col-lg-6 card-hover" id="card3">
-                    <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'RIWAYAT PENYAKIT IMS DAN HIV')">
+                <div class="col-md-5 col-lg-5 card-hover" id="card3">
+                    <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="openHivModal()">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -132,7 +143,14 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-6 card-hover" id="card4">
+                <!-- Tombol untuk Membuka Modal (Tombol ini bisa dihapus karena card akan membuka modal langsung) -->
+                <div class="col-md-1 col-lg-1 mb-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hivModal">
+                        Open
+                    </button>
+                </div>
+
+                <div class="col-md-5 col-lg-5 card-hover" id="card4">
                     <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA')">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
@@ -144,9 +162,19 @@
                                     <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA</h6>
                                 </div>
                             </div>
+                            <div id="diabetes-badge" class="badge mt-1"></div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tombol untuk Membuka Modal -->
+                <!-- Tombol untuk Membuka Modal -->
+                <div class="col-md-1 col-lg-1 mb-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-diabetes">
+                        Open
+                    </button>
+                </div>
+
 
                 <div class="col-md-6 col-lg-6 card-hover" id="card5">
                     <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'SEHAT DAN TIDAK ADA RIWAYAT PENYAKIT APAPUN')">
@@ -803,13 +831,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-12 p-4">
-                                <div class="row gy-3"> <!-- Mengurangi jarak vertikal antar elemen -->
+                            {{-- <div class="col-md-12 col-12 p-4">
+                                <div class="row gy-3">
                                     <div class="col-md-6 col-12">
                                         <div class="mb-2">
                                             <h6 class="text-primary fw-bold">1. Apa Saja Cara Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
                                         </div>
-                                        <!-- Video YouTube embed -->
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <iframe class="embed-responsive-item" width="100%" height="315"
                                                 src="https://www.youtube.com/embed/m4cs1_3DsCo?si=sySWpi_9sI9JEWaM"
@@ -821,7 +848,6 @@
                                         <div class="mb-2">
                                             <h6 class="text-primary fw-bold">2. Menggunakan Hormon untuk Mencegah Kehamilan? | Mengenal Kontrasepsi</h6>
                                         </div>
-                                        <!-- Video YouTube embed -->
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <iframe class="embed-responsive-item" width="100%" height="315"
                                                 src="https://www.youtube.com/embed/Fxrphc-qDUQ?si=Zu_E39MipdwQf7q1"
@@ -830,7 +856,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-12 col-12 card">
                                 <div class="card-body">
                                     <h5 class="text-success">Kesimpulan</h5>
@@ -851,8 +877,115 @@
     </div>
   </div>
 
+
+  <!-- Modal untuk HIV/IMS -->
+  <div class="modal fade" id="hivModal" tabindex="-1" aria-labelledby="hivModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hivModalLabel">Informasi HIV/IMS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>HIV/IMS</h6>
+                <ul>
+                    <li><strong>Dikatakan HIV/IMS jika:</strong></li>
+                    <li>1) Ada diagnose dari dokter.</li>
+                    <li>2) PERHATIAN !!! bagi yang sering berganti pasangan saat berhubungan, memakai tato, sering memakai jarum suntik bergantian.</li>
+                    <li>3) Mengonsumsi obat resep dari dokter ARV.</li>
+                    <li><strong>Jika belum tahu dan belum periksa,</strong> silakan datang ke fasilitas kesehatan terdekat jika Anda sering berganti pasangan.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+  {{-- gula  darah --}}
+<!-- Modal untuk Input Gula Darah -->
+<div class="modal fade" id="vertical-center-modal-diabetes" tabindex="-1" aria-labelledby="vertical-center-modal-diabetesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="vertical-center-modal-diabetesLabel">Masukkan Gula Darah atau Hemoglobin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="diabetes-form">
+                    <div class="mb-3">
+                        <label for="gulaDarah" class="form-label">Kadar Gula Darah (mg/dL)</label>
+                        <input type="text" class="form-control" id="gulaDarah" placeholder="Masukkan kadar gula darah (misalnya: 200)">
+                    </div>
+                    <div class="mb-3">
+                        <label for="statusGula" class="form-label">Status Gula Darah</label>
+                        <span id="diabetes-badge" class="badge mt-1">Status</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <!-- Keterangan -->
+                <div class="mt-3">
+                    <h6>Keterangan:</h6>
+                    <ul>
+                        <li><strong>Gula Darah Tinggi:</strong> Dikatakan gula darah tinggi jika:</li>
+                        <li>1) Hasil laboratorium cek darah pada kadar gula setelah makan >200 mg/dL.</li>
+                        <li>2) Ada bawaan dari keluarga.</li>
+                        <li>3) Mengonsumsi obat gula darah tinggi resep dari dokter seperti glibet, metformin, insulin.</li>
+                        <li><strong>Normal gula darah:</strong> <140 mg/dL.</li>
+                        <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
+                    </ul>
+                    <h6>Kurang Darah (Anemia):</h6>
+                    <ul>
+                        <li><strong>Dikatakan kurang darah jika:</strong></li>
+                        <li>1) Hasil laboratorium cek darah pada hemoglobin (HB) <12 g/dL.</li>
+                        <li>2) Mengonsumsi obat penambah darah seperti FE setiap hari.</li>
+                        <li><strong>Normal HB:</strong> 12-16 g/dL.</li>
+                        <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  {{-- modal hipertensi --}}
+        <<!-- Modal untuk Input Tekanan Darah -->
+        <div class="modal fade" id="vertical-center-modal-hipertensi" tabindex="-1" aria-labelledby="vertical-center-modal-hipertensiLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="vertical-center-modal-hipertensiLabel">Masukkan Tekanan Darah</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="hipertensi-form">
+                            <div class="mb-3">
+                                <label for="tekananDarah" class="form-label">Tekanan Darah (misalnya: 190/90)</label>
+                                <input type="text" class="form-control" id="tekananDarah" placeholder="Masukkan tekanan darah">
+                            </div>
+                            <div class="mb-3">
+                                <label for="statusDarah" class="form-label">Status Tekanan Darah</label>
+                                <input type="text" class="form-control" id="statusDarah" placeholder="Normal / Tinggi / Rendah" readonly>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <div class="mt-3">
+                            <h6>Keterangan:</h6>
+                            <ul>
+                                <li>Dikatakan tekanan darah tinggi jika:</li>
+                                <li>1) Pernah melakukan tensi darah di fasilitas kesehatan dengan tekanan darah >140/90</li>
+                                <li>2) Ada riwayat bawaan dari keluarga</li>
+                                <li>3) Mengonsumsi obat tensi resep dari dokter seperti: Amlodipin, captopril, nifedipine, minoxidil, verapamil, hidralazin</li>
+                                <li>• Normal tekanan darah tensi kurang dari <120/80</li>
+                                <li>• Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
   {{-- modal --}}
-  <div
+                    <div
                         class="modal fade"
                         id="vertical-center-modal"
                         tabindex="-1"
@@ -1081,6 +1214,88 @@
                         });
                     </script>
 
+
+ {{-- gula darah --}}
+ <script>
+    // Fungsi untuk menilai status gula darah dan anemia, serta memperbarui badge
+     document.getElementById('diabetes-form').addEventListener('submit', function (e) {
+         e.preventDefault();
+         const gulaDarah = document.getElementById('gulaDarah').value;
+         const badge = document.getElementById('diabetes-badge'); // Mendapatkan elemen badge
+
+         // Validasi input untuk format gula darah (misalnya 200)
+         const regex = /^(\d+)$/;
+         const match = gulaDarah.match(regex);
+
+         if (match) {
+             const gula = parseInt(match[1]); // Mengambil nilai gula darah
+
+             // Menilai status gula darah
+             let status = "";
+             let badgeClass = "";
+
+             if (gula > 200) {
+                 status = "Tinggi";
+                 badgeClass = "bg-danger"; // Warna untuk gula darah tinggi
+             } else if (gula < 140) {
+                 status = "Normal";
+                 badgeClass = "bg-success"; // Warna untuk gula darah normal
+             } else {
+                 status = "Rendah";
+                 badgeClass = "bg-warning"; // Warna untuk gula darah rendah
+             }
+
+             // Memperbarui badge dengan status
+             badge.textContent = status; // Menampilkan status pada badge
+             badge.className = `badge mt-1 ${badgeClass}`; // Menambahkan kelas untuk warna badge
+
+         } else {
+             alert('Format kadar gula darah tidak valid. Gunakan format angka (misalnya: 200).');
+         }
+     });
+
+ </script>
+ {{-- hipertensi --}}
+ <script>
+     document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
+         e.preventDefault();
+         const tekananDarah = document.getElementById('tekananDarah').value;
+         const statusDarahField = document.getElementById('statusDarah');
+         const badge = document.getElementById('hipertensi-badge');
+
+         const regex = /^(\d{1,3})\/(\d{1,3})$/;
+         const match = tekananDarah.match(regex);
+
+         if (match) {
+             const systolic = parseInt(match[1]);
+             const diastolic = parseInt(match[2]);
+
+
+             let status = "";
+             let badgeClass = "";
+
+             if (systolic > 140 || diastolic > 90) {
+                 status = "Tinggi";
+                 badgeClass = "bg-danger";
+             } else if (systolic < 120 && diastolic < 80) {
+                 status = "Normal";
+                 badgeClass = "bg-success";
+             } else {
+                 status = "Rendah";
+                 badgeClass = "bg-warning";
+             }
+
+             // Memperbarui field status dan badge
+             statusDarahField.value = status;
+             badge.textContent = status;
+             badge.className = `badge mt-1 ${badgeClass}`;
+
+         } else {
+             alert('Format tekanan darah tidak valid. Gunakan format 190/90.');
+         }
+     });
+ </script>
+
 <script>
     const saveFormResultUrl = 'http://localhost:8000/save-form-result'; // Hardcode URL sementara
      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -1089,26 +1304,26 @@
 
     document.addEventListener("DOMContentLoaded", function () {
     console.log("Page Loaded");
-    const iframe = document.querySelector("iframe");
-    console.log("Iframe loaded:", iframe);
-    iframe.onload = function() {
-        console.log("Iframe has finished loading, now fetching data...");
-        fetch("{{ route('get-form-data') }}")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Data fetched:", data);
-                document.getElementById('nama-akseptor').innerText = data.nama_akseptor || '';
-                document.getElementById('nama-suami').innerText = data.nama_suami || '';
-                document.getElementById('pendidikan-terakhir').innerText = data.pendidikan_terakhir || '';
-                document.getElementById('tujuan-kb').innerText = data.tujuan_kb || '';
-                document.getElementById('no-hp').innerText = data.no_hp || '';
-                document.getElementById('alamat').innerText = data.alamat || '';
-                saveToLocalStorage('formData', data);
-            })
-            .catch((error) => console.error("Error fetching data:", error));
-    };
-});
 
+    fetch("{{ route('get-form-data') }}") // Ganti dengan URL API yang benar
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Data fetched:", data);
+            document.getElementById('nama-akseptor').innerText = data.nama_akseptor || '';
+            document.getElementById('nama-suami').innerText = data.nama_suami || '';
+            document.getElementById('pendidikan-terakhir').innerText = data.pendidikan_terakhir || '';
+            document.getElementById('tujuan-kb').innerText = data.tujuan_kb || '';
+            document.getElementById('no-hp').innerText = data.no_hp || '';
+            document.getElementById('alamat').innerText = data.alamat || '';
+            localStorage.setItem('formData', JSON.stringify(data));
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
     // Fungsi untuk menyimpan data ke localStorage
     function saveToLocalStorage(key, value) {
       let storedData = JSON.parse(localStorage.getItem('formData')) || {};

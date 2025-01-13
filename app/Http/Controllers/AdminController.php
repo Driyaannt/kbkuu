@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Kuisioner;
+use App\Models\PostTestKuisioner;
 
 class AdminController extends Controller
 {
@@ -43,9 +45,16 @@ class AdminController extends Controller
                 result_method_k_b_s.updated_at
         ");
 
+        // Ambil data kuisioner sebagai tambahan jika dibutuhkan
+        $kuisioners = Kuisioner::all();
+        $postTestKuisioners = PostTestKuisioner::all();
+
+
         // Return view dengan data
         return view('layouts.admin.home-admin', [
             'results' => $results,
+            'kuisioners' => $kuisioners,
+            'postTestKuisioners' => $postTestKuisioners
         ]);
     }
 }

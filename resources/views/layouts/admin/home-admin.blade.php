@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+<style>
+.card-hover.active {
+    border: 2px solid #0d6efd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
 
 <div class="row mt-3">
     <div class="col-md-6 col-lg-4">
@@ -14,51 +20,58 @@
           <div class="d-flex align-items-center">
             <span class="flex-shrink-0"><i class="ti ti-photo text-warning display-6"></i></span>
             <div class="ms-4">
-              <h4 class="card-title text-dark">My Photos</h4>
-              <h6 class="card-subtitle mb-0 fs-2 fw-normal">
+              <h4 class="card-title text-dark mt-2">Dashboard (Coming Soon)</h4>
+              {{-- <h6 class="card-subtitle mb-0 fs-2 fw-normal">
                 2.4GB Junk File
               </h6>
-              <span class="fs-2 mt-1 ">Folder: 26 Items: 159 Used: 23.6GB</span>
+              <span class="fs-2 mt-1 ">Folder: 26 Items: 159 Used: 23.6GB</span> --}}
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6 col-lg-4">
-      <div class="card rounded-3 card-hover">
-        <a href="#" class="stretched-link"></a>
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <span class="flex-shrink-0"><i class="ti ti-brand-google-drive text-info display-6"></i></span>
-            <div class="ms-4">
-              <h4 class="card-title text-dark">My Google Docs</h4>
-              <h6 class="card-subtitle mb-0 fs-2 fw-normal">
-                2.4GB Junk File
-              </h6>
-              <span class="fs-2 mt-1 ">Folder: 26 Items: 159 Used: 23.6GB</span>
+        <div class="card rounded-3 card-hover" id="cardDataTable1" data-target="dataTable1Wrapper" onclick="switchTable(this)">
+            <a href="#" class="stretched-link"></a>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <span class="flex-shrink-0"><i class="ti ti-users text-success display-6"></i></span>
+                    <div class="ms-4">
+                        <h4 class="card-title text-dark mt-2">Data Report Hasil</h4>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+
     <div class="col-md-6 col-lg-4">
-      <div class="card rounded-3 card-hover">
-        <a href="#" class="stretched-link"></a>
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <span class="flex-shrink-0"><i class="ti ti-users text-success display-6"></i></span>
-            <div class="ms-4">
-              <h4 class="card-title text-dark">My Google Contacts</h4>
-              <h6 class="card-subtitle mb-0 fs-2 fw-normal mb-1">
-                2.4GB Junk File
-              </h6>
-              <span class="fs-2 mt-1 ">Folder: 45 Items: 78 Used: 3.6GB</span>
+        <div class="card rounded-3 card-hover" id="cardDataTable2" data-target="dataTable2Wrapper" onclick="switchTable(this)">
+            <a href="#" class="stretched-link"></a>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <span class="flex-shrink-0"><i class="ti ti-brand-google-drive text-info display-6"></i></span>
+                    <div class="ms-4">
+                        <h4 class="card-title text-dark mt-2">Data (Pretest) Kuisioner</h4>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-6 col-lg-4">
+    <div class="col-md-12 col-lg-12">
+        <div class="card rounded-3 card-hover" id="cardDataTable3" data-target="dataTable3Wrapper" onclick="switchTable(this)">
+            <a href="#" class="stretched-link"></a>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <span class="flex-shrink-0"><i class="ti ti-brand-google-drive text-info display-6"></i></span>
+                    <div class="ms-4">
+                        <h4 class="card-title text-dark mt-2">Data (Posttest) Kuisioner</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="col-md-6 col-lg-4">
       <div class="card rounded-3 card-hover">
         <a href="#" class="stretched-link"></a>
         <div class="card-body">
@@ -108,7 +121,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 
   <div class="card" style="background-color: #FFCCD5; height:20px; border-radius:20px;"></div>
@@ -118,7 +131,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h5 class="mb-0">Data Report KB</h5>
+                    <h5 class="mb-0">Data Report</h5>
                 </div>
 
                 <!-- Manual Filter -->
@@ -134,8 +147,8 @@
                     </div>
                 </div> --}}
 
-                <div class="table-responsive">
-                    <table id="dataTable" class="table table-hover table-striped table-bordered display nowrap w-100">
+                <div class="table-responsive" id="dataTable1Wrapper" style="display: none;">
+                    <table id="dataTable1" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
                                 <th>ID</th>
@@ -174,6 +187,185 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="table-responsive" id="dataTable2Wrapper" style="display: none;">
+                    <table id="dataTable2" class="table table-hover table-striped table-bordered display nowrap w-100">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>Usia</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Pendidikan</th>
+                                <th>Pekerjaan</th>
+                                <th>Jumlah Anak</th>
+                                <th>Pengetahuan 1</th>
+                                <th>Pengetahuan 2</th>
+                                <th>Pengetahuan 3</th>
+                                <th>Pengetahuan 4</th>
+                                <th>Pengetahuan 5</th>
+                                <th>Pengetahuan 6</th>
+                                <th>Pengetahuan 7</th>
+                                <th>Pengetahuan (%)</th>
+                                <th>Pengetahuan Kategori</th>
+                                <th>Sikap 1</th>
+                                <th>Sikap 2</th>
+                                <th>Sikap 3</th>
+                                <th>Sikap 4</th>
+                                <th>Sikap 5</th>
+                                <th>Sikap 6</th>
+                                <th>Sikap (%)</th>
+                                <th>Sikap Kategori</th>
+                                <th>Tindakan 1</th>
+                                <th>Tindakan 2</th>
+                                <th>Tindakan 3</th>
+                                <th>Tindakan 4</th>
+                                <th>Tindakan 5</th>
+                                <th>Tindakan 6</th>
+                                <th>Tindakan 7</th>
+                                <th>Tindakan 8</th>
+                                <th>Tindakan 9</th>
+                                <th>Tindakan 10</th>
+                                <th>Tindakan (%)</th>
+                                <th>Tindakan Kategori</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($kuisioners as $row)
+                            <tr>
+                                <td>{{ $row->id }}</td>
+                                <td>{{ $row->nama }}</td>
+                                <td>{{ $row->usia }}</td>
+                                <td>{{ $row->jenis_kelamin }}</td>
+                                <td>{{ $row->pendidikan }}</td>
+                                <td>{{ $row->pekerjaan }}</td>
+                                <td>{{ $row->jumlah_anak }}</td>
+                                <td>{{ $row->kb1 }}</td>
+                                <td>{{ $row->kb2 }}</td>
+                                <td>{{ $row->kb3 }}</td>
+                                <td>{{ $row->kb4 }}</td>
+                                <td>{{ $row->kb5 }}</td>
+                                <td>{{ $row->kb6 }}</td>
+                                <td>{{ $row->kb7 }}</td>
+                                <td>{{ $row->pengetahuan_percentage }}%</td>
+                                <td>{{ $row->pengetahuan_kategori }}</td>
+                                <td>{{ $row->q1 }}</td>
+                                <td>{{ $row->q2 }}</td>
+                                <td>{{ $row->q3 }}</td>
+                                <td>{{ $row->q4 }}</td>
+                                <td>{{ $row->q5 }}</td>
+                                <td>{{ $row->q6 }}</td>
+                                <td>{{ $row->sikap_percentage }}%</td>
+                                <td>{{ $row->sikap_kategori }}</td>
+                                <td>{{ $row->action1 }}</td>
+                                <td>{{ $row->action2 }}</td>
+                                <td>{{ $row->action3 }}</td>
+                                <td>{{ $row->action4 }}</td>
+                                <td>{{ $row->action5 }}</td>
+                                <td>{{ $row->action6 }}</td>
+                                <td>{{ $row->action7 }}</td>
+                                <td>{{ $row->action8 }}</td>
+                                <td>{{ $row->action9 }}</td>
+                                <td>{{ $row->action10 }}</td>
+                                <td>{{ $row->tindakan_percentage }}%</td>
+                                <td>{{ $row->tindakan_kategori }}</td>
+                                <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-responsive" id="dataTable3Wrapper" style="display: none;">
+                    <label>Data Post</label>
+                    <table id="dataTable3" class="table table-hover table-striped table-bordered display nowrap w-100">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>Usia</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Pendidikan</th>
+                                <th>Pekerjaan</th>
+                                <th>Jumlah Anak</th>
+                                <th>Pengetahuan 1</th>
+                                <th>Pengetahuan 2</th>
+                                <th>Pengetahuan 3</th>
+                                <th>Pengetahuan 4</th>
+                                <th>Pengetahuan 5</th>
+                                <th>Pengetahuan 6</th>
+                                <th>Pengetahuan 7</th>
+                                <th>Pengetahuan (%)</th>
+                                <th>Pengetahuan Kategori</th>
+                                <th>Sikap 1</th>
+                                <th>Sikap 2</th>
+                                <th>Sikap 3</th>
+                                <th>Sikap 4</th>
+                                <th>Sikap 5</th>
+                                <th>Sikap 6</th>
+                                <th>Sikap (%)</th>
+                                <th>Sikap Kategori</th>
+                                <th>Tindakan 1</th>
+                                <th>Tindakan 2</th>
+                                <th>Tindakan 3</th>
+                                <th>Tindakan 4</th>
+                                <th>Tindakan 5</th>
+                                <th>Tindakan 6</th>
+                                <th>Tindakan 7</th>
+                                <th>Tindakan 8</th>
+                                <th>Tindakan 9</th>
+                                <th>Tindakan 10</th>
+                                <th>Tindakan (%)</th>
+                                <th>Tindakan Kategori</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($postTestKuisioners as $row)
+                            <tr>
+                                <td>{{ $row->id }}</td>
+                                <td>{{ $row->nama }}</td>
+                                <td>{{ $row->usia }}</td>
+                                <td>{{ $row->jenis_kelamin }}</td>
+                                <td>{{ $row->pendidikan }}</td>
+                                <td>{{ $row->pekerjaan }}</td>
+                                <td>{{ $row->jumlah_anak }}</td>
+                                <td>{{ $row->kb1 }}</td>
+                                <td>{{ $row->kb2 }}</td>
+                                <td>{{ $row->kb3 }}</td>
+                                <td>{{ $row->kb4 }}</td>
+                                <td>{{ $row->kb5 }}</td>
+                                <td>{{ $row->kb6 }}</td>
+                                <td>{{ $row->kb7 }}</td>
+                                <td>{{ $row->pengetahuan_percentage }}%</td>
+                                <td>{{ $row->pengetahuan_kategori }}</td>
+                                <td>{{ $row->q1 }}</td>
+                                <td>{{ $row->q2 }}</td>
+                                <td>{{ $row->q3 }}</td>
+                                <td>{{ $row->q4 }}</td>
+                                <td>{{ $row->q5 }}</td>
+                                <td>{{ $row->q6 }}</td>
+                                <td>{{ $row->sikap_percentage }}%</td>
+                                <td>{{ $row->sikap_kategori }}</td>
+                                <td>{{ $row->action1 }}</td>
+                                <td>{{ $row->action2 }}</td>
+                                <td>{{ $row->action3 }}</td>
+                                <td>{{ $row->action4 }}</td>
+                                <td>{{ $row->action5 }}</td>
+                                <td>{{ $row->action6 }}</td>
+                                <td>{{ $row->action7 }}</td>
+                                <td>{{ $row->action8 }}</td>
+                                <td>{{ $row->action9 }}</td>
+                                <td>{{ $row->action10 }}</td>
+                                <td>{{ $row->tindakan_percentage }}%</td>
+                                <td>{{ $row->tindakan_kategori }}</td>
+                                <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -193,61 +385,109 @@
 
 <script>
     $(document).ready(function () {
-        var table = $('#dataTable').DataTable({
-            dom: '<"d-flex justify-content-between"lfB>rtip', // Custom layout for filter, buttons, and pagination
-            buttons: [
-                {
-                    extend: 'copy',
-                    className: 'btn btn-primary btn-sm',
-                    text: '<i class="fas fa-copy me-1"></i> Copy',
-                    filename: 'Data_KB_Copy' // Change file name for copy
-                },
-                {
-                    extend: 'csv',
-                    className: 'btn btn-success btn-sm',
-                    text: '<i class="fas fa-file-csv me-1"></i> CSV',
-                    filename: 'Data_KB_CSV' // Change file name for CSV export
-                },
-                {
-                    extend: 'excel',
-                    className: 'btn btn-warning btn-sm',
-                    text: '<i class="fas fa-file-excel me-1"></i> Excel',
-                    filename: 'Data_KB_Excel' // Change file name for Excel export
-                },
-                {
-                    extend: 'pdf',
-                    className: 'btn btn-danger btn-sm',
-                    text: '<i class="fas fa-file-pdf me-1"></i> PDF',
-                    filename: 'Data_KB_PDF' // Change file name for PDF export
-                },
-                {
-                    extend: 'print',
-                    className: 'btn btn-info btn-sm',
-                    text: '<i class="fas fa-print me-1"></i> Print',
-                    title: 'Data KB Print', // Change the title for print
-                    filename: 'Data_KB_Print' // Change file name for print
-                }
-            ],
-            scrollX: true, // Enable horizontal scrolling
-            scrollY: '400px', // Set vertical scrolling with max height
-            scrollCollapse: true, // Allow table to collapse if content is small
-            responsive: true,
-            paging: true,
-            searching: true,
-            info: true
+    // Inisialisasi DataTable 1
+    $('#dataTable1').DataTable({
+        dom: '<"d-flex justify-content-between"lfB>rtip',
+        buttons: [
+            { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+            { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+            { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+            { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+            { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+        ],
+        scrollX: true,
+        scrollY: '400px',
+        responsive: true,
+        paging: true,
+        searching: true,
+        info: true
+    });
+
+    // Inisialisasi DataTable 2
+    $('#dataTable2').DataTable({
+        dom: '<"d-flex justify-content-between"lfB>rtip',
+        buttons: [
+            { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+            { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+            { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+            { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+            { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+        ],
+        scrollX: true,
+        scrollY: '400px',
+        responsive: true,
+        paging: true,
+        searching: true,
+        info: true
+    });
+
+    $('#dataTable3').DataTable({
+        dom: '<"d-flex justify-content-between"lfB>rtip',
+        buttons: [
+            { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+            { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+            { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+            { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+            { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+        ],
+        scrollX: true,
+        scrollY: '400px',
+        responsive: true,
+        paging: true,
+        searching: true,
+        info: true
+    });
+
+    // Logika switch antara tabel
+    $('.card-hover').on('click', function () {
+        const target = $(this).data('target');
+        $('.table-responsive').hide(); // Sembunyikan semua tabel
+        $(`#${target}`).show(); // Tampilkan tabel yang dipilih
+    });
+
+    // Tampilkan tabel pertama secara default
+    $('#dataTable1Wrapper').show();
+});
+
+</script>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Tampilkan tabel dan pilih kartu default
+    showTable("dataTable1Wrapper", "cardDataTable1");
+    });
+
+    function switchTable(card) {
+        const targetTableId = card.getAttribute("data-target");
+        const cardId = card.id;
+        showTable(targetTableId, cardId);
+    }
+
+    function showTable(tableId, cardId) {
+        // Sembunyikan semua tabel
+        const allTables = document.querySelectorAll(".table-responsive");
+        allTables.forEach(table => {
+            table.style.display = "none";
         });
 
-        // Apply filter to table
-        // $('#filter_id').on('keyup', function () {
-        //     table.column(0).search(this.value).draw();
-        // });
+        // Tampilkan tabel yang dipilih
+        const targetTable = document.getElementById(tableId);
+        if (targetTable) {
+            targetTable.style.display = "block";
+        }
 
-        // $('#filter_nama_akseptor').on('keyup', function () {
-        //     table.column(1).search(this.value).draw();
-        // });
+        // Hapus kelas aktif dari semua kartu
+        const allCards = document.querySelectorAll(".card-hover");
+        allCards.forEach(card => {
+            card.classList.remove("active");
+        });
 
-        // Add more filters as needed
-    });
+        // Tambahkan kelas aktif ke kartu yang dipilih
+        const targetCard = document.getElementById(cardId);
+        if (targetCard) {
+            targetCard.classList.add("active");
+        }
+    }
 </script>
 
 @endsection
