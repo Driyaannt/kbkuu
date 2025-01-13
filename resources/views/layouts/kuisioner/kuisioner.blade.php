@@ -164,79 +164,80 @@
         <li><strong>E:</strong> Tidak dapat menentukan (ragu-ragu)</li>
         <li><strong>TS:</strong> Tidak setuju</li>
         <li><strong>STS:</strong> Sangat tidak setuju</li>
+        <li><strong>Scroll Samping jika tidak terlihat untuk stssnya</strong></li>
+
       </ul>
-
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Pertanyaan</th>
-            <th>SS</th>
-            <th>S</th>
-            <th>E</th>
-            <th>TS</th>
-            <th>STS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Saya percaya bahwa KB penting untuk mengatur jarak kelahiran.</td>
-            <td><input type="radio" name="q1" id="q1-ss" value="SS" class="form-check-input" /></td>
-            <td><input type="radio" name="q1" id="q1-s" value="S" class="form-check-input" /></td>
-            <td><input type="radio" name="q1" id="q1-e" value="E" class="form-check-input" /></td>
-            <td><input type="radio" name="q1" id="q1-ts" value="TS" class="form-check-input" /></td>
-            <td><input type="radio" name="q1" id="q1-sts" value="STS" class="form-check-input" /></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Saya percaya bahwa KB dapat membantu meningkatkan kesejahteraan keluarga.</td>
-            <td><input type="radio" name="q2" id="q2-ss" value="SS" class="form-check-input" /></td>
-            <td><input type="radio" name="q2" id="q2-s" value="S" class="form-check-input" /></td>
-            <td><input type="radio" name="q2" id="q2-e" value="E" class="form-check-input" /></td>
-            <td><input type="radio" name="q2" id="q2-ts" value="TS" class="form-check-input" /></td>
-            <td><input type="radio" name="q2" id="q2-sts" value="STS" class="form-check-input" /></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Saya tidak setuju jika memutuskan metode KB dengan pasangan saya.</td>
-            <td><input type="radio" name="q3" id="q3-ss" value="SS" class="form-check-input" /></td>
-            <td><input type="radio" name="q3" id="q3-s" value="S" class="form-check-input" /></td>
-            <td><input type="radio" name="q3" id="q3-e" value="E" class="form-check-input" /></td>
-            <td><input type="radio" name="q3" id="q3-ts" value="TS" class="form-check-input" /></td>
-            <td><input type="radio" name="q3" id="q3-sts" value="STS" class="form-check-input" /></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Saya tidak merasa terganggu oleh penggunaan alat kontrasepsi.</td>
-            <td><input type="radio" name="q4" id="q4-ss" value="SS" class="form-check-input" /></td>
-            <td><input type="radio" name="q4" id="q4-s" value="S" class="form-check-input" /></td>
-            <td><input type="radio" name="q4" id="q4-e" value="E" class="form-check-input" /></td>
-            <td><input type="radio" name="q4" id="q4-ts" value="TS" class="form-check-input" /></td>
-            <td><input type="radio" name="q4" id="q4-sts" value="STS" class="form-check-input" /></td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Saya merasa metode KB dapat memberikan efek samping yang berbahaya.</td>
-            <td><input type="radio" name="q5" id="q5-ss" value="SS" class="form-check-input" /></td>
-            <td><input type="radio" name="q5" id="q5-s" value="S" class="form-check-input" /></td>
-            <td><input type="radio" name="q5" id="q5-e" value="E" class="form-check-input" /></td>
-            <td><input type="radio" name="q5" id="q5-ts" value="TS" class="form-check-input" /></td>
-            <td><input type="radio" name="q5" id="q5-sts" value="STS" class="form-check-input" /></td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Saya tidak merasa nyaman berbicara tentang KB dengan pasangan saya.</td>
-            <td><input type="radio" name="q6" id="q6-ss" value="SS" class="form-check-input" /></td>
-            <td><input type="radio" name="q6" id="q6-s" value="S" class="form-check-input" /></td>
-            <td><input type="radio" name="q6" id="q6-e" value="E" class="form-check-input" /></td>
-            <td><input type="radio" name="q6" id="q6-ts" value="TS" class="form-check-input" /></td>
-            <td><input type="radio" name="q6" id="q6-sts" value="STS" class="form-check-input" /></td>
-          </tr>
-        </tbody>
-      </table>
-
-
+        <div style="overflow-x: auto; max-width: 100%;">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Pertanyaan</th>
+                    <th>SS</th>
+                    <th>S</th>
+                    <th>E</th>
+                    <th>TS</th>
+                    <th>STS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Saya percaya bahwa KB penting untuk mengatur jarak kelahiran.</td>
+                    <td><input type="radio" name="q1" id="q1-ss" value="SS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q1" id="q1-s" value="S" class="form-check-input" /></td>
+                    <td><input type="radio" name="q1" id="q1-e" value="E" class="form-check-input" /></td>
+                    <td><input type="radio" name="q1" id="q1-ts" value="TS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q1" id="q1-sts" value="STS" class="form-check-input" /></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Saya percaya bahwa KB dapat membantu meningkatkan kesejahteraan keluarga.</td>
+                    <td><input type="radio" name="q2" id="q2-ss" value="SS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q2" id="q2-s" value="S" class="form-check-input" /></td>
+                    <td><input type="radio" name="q2" id="q2-e" value="E" class="form-check-input" /></td>
+                    <td><input type="radio" name="q2" id="q2-ts" value="TS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q2" id="q2-sts" value="STS" class="form-check-input" /></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Saya tidak setuju jika memutuskan metode KB dengan pasangan saya.</td>
+                    <td><input type="radio" name="q3" id="q3-ss" value="SS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q3" id="q3-s" value="S" class="form-check-input" /></td>
+                    <td><input type="radio" name="q3" id="q3-e" value="E" class="form-check-input" /></td>
+                    <td><input type="radio" name="q3" id="q3-ts" value="TS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q3" id="q3-sts" value="STS" class="form-check-input" /></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Saya tidak merasa terganggu oleh penggunaan alat kontrasepsi.</td>
+                    <td><input type="radio" name="q4" id="q4-ss" value="SS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q4" id="q4-s" value="S" class="form-check-input" /></td>
+                    <td><input type="radio" name="q4" id="q4-e" value="E" class="form-check-input" /></td>
+                    <td><input type="radio" name="q4" id="q4-ts" value="TS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q4" id="q4-sts" value="STS" class="form-check-input" /></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Saya merasa metode KB dapat memberikan efek samping yang berbahaya.</td>
+                    <td><input type="radio" name="q5" id="q5-ss" value="SS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q5" id="q5-s" value="S" class="form-check-input" /></td>
+                    <td><input type="radio" name="q5" id="q5-e" value="E" class="form-check-input" /></td>
+                    <td><input type="radio" name="q5" id="q5-ts" value="TS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q5" id="q5-sts" value="STS" class="form-check-input" /></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Saya tidak merasa nyaman berbicara tentang KB dengan pasangan saya.</td>
+                    <td><input type="radio" name="q6" id="q6-ss" value="SS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q6" id="q6-s" value="S" class="form-check-input" /></td>
+                    <td><input type="radio" name="q6" id="q6-e" value="E" class="form-check-input" /></td>
+                    <td><input type="radio" name="q6" id="q6-ts" value="TS" class="form-check-input" /></td>
+                    <td><input type="radio" name="q6" id="q6-sts" value="STS" class="form-check-input" /></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     <hr />
     <h5>D. Tindakan Terkait KB</h5>
     <div class="mb-3">

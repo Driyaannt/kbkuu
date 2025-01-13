@@ -92,7 +92,7 @@ https://templatemo.com/tm-570-chain-app-dev
             <div class="text-button">
                 <a href="/homepage">Next <i class="fa fa-arrow-right"></i></a>
               </div>
-          </div>x`
+          </div>
         </div>
         <div class="col-lg-4 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="service-item first-service">
