@@ -7,7 +7,7 @@
 
 <div class="card mt-4">
   <div class="card-header bg-primary">
-    <h4 class="mb-0 text-white">(Pre Test) KUESIONER TENTANG KELUARGA BERENCANA (KB)</h4>
+    <h4 class="mb-0 text-white">(POST TEST) KUESIONER TENTANG KELUARGA BERENCANA (KB)</h4>
   </div>
   <form id="kuisionerForm">
     @csrf
@@ -532,7 +532,7 @@
             if (result.isConfirmed) {
                 // If user confirms, submit the form data using AJAX
                 $.ajax({
-                    url: '/save-kuisioner', // Ganti dengan URL route controller store
+                    url: '/save-post-test-kuisioner', // Ganti dengan URL route controller store
                     type: 'POST',
                     data: finalData,
                     headers: {
@@ -547,7 +547,7 @@
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redirect ke halaman lain setelah tombol OK diklik
-                                window.location.href = '/usage-category';
+                                window.location.href = '/';
                             }
                         });
                     },

@@ -302,7 +302,7 @@ https://templatemo.com/tm-570-chain-app-dev
             </div>
         </div>
         <!-- Button Start -->
-        <div class="col-lg-12 mt-4">
+        <div class="col-lg-12 mt-4">x
             <div class="gradien-button text-center wow fadeInDown" data-wow-delay="4s" data-wow-duration="4s">
               <a href="{{route('kuisioner')}}" class="custom-gradient-button">
                 <i class="fa fa-sign-in-alt"></i> Mulai
@@ -320,7 +320,7 @@ https://templatemo.com/tm-570-chain-app-dev
       <div class="row">
         <div class="col-lg-12">
           <div class="copyright-text">
-            <p>By Nesya Windra Polkesbaya © 2025 Kbkuu. All Rights Reserved.
+            <p class="text-dark text-bold">By Nesya Windra Polkesbaya © 2025. All Rights Reserved.
           {{-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> --}}
           </div>
         </div>

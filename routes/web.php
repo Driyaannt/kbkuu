@@ -25,6 +25,12 @@ Route::get('/kuisioner', function () {
     return view('layouts.kuisioner.kuisioner');
 })->name('kuisioner');
 
+Route::get('/post-test-kuisioner', function () {
+    return view('layouts.post-test-kuisioner.post-test-kuisioner');
+})->name('post-test-kuisioner');
+
+Route::post('/save-post-test-kuisioner', [KuisionerController::class, 'PostTestStore'])->name('save-post-test-kuisioner');
+
 Route::post('/save-kuisioner', [KuisionerController::class, 'store'])->name('save-kuisioner');
 
 Route::post('/save-form-data', [HomeController::class, 'saveFormData'])->name('save-form-data');
@@ -41,6 +47,12 @@ Route::get('/main-menu', function () {
 Route::get('/dashboard', function () {
     return view('layouts.dashboard.dashboard');
 })->name('dashboard');
+
+
+Route::get('/usage-category', function () {
+    return view('layouts.usage-category.usage-category');
+})->name('usage-category');
+
 
 // route kb-method
 Route::get('/kb-method', [MetodeKBController::class, 'index'])->name('kb-method');
