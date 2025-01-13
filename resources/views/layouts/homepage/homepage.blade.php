@@ -44,6 +44,10 @@ https://templatemo.com/tm-570-chain-app-dev
         transition: background 0.3s ease;
         border-radius: 30px !important;
         }
+        .gradien-button{
+            z-index: 10;
+            position: relative;
+        }
 
         .custom-gradient-button:hover {
         background: linear-gradient(to right, #0077b6, #00b4d8); /* Hover effect for the gradient */
