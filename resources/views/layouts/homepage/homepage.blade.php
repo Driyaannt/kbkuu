@@ -52,6 +52,11 @@ https://templatemo.com/tm-570-chain-app-dev
         .custom-gradient-button:hover {
         background: linear-gradient(to right, #0077b6, #00b4d8); /* Hover effect for the gradient */
         }
+        .service-image {
+            max-width: 100%;
+            max-height: 250px; /* Sesuaikan dengan kebutuhan */
+            object-fit: cover; /* Agar proporsi gambar tetap terjaga */
+        }
 
     </style>
   </head>
@@ -225,97 +230,112 @@ https://templatemo.com/tm-570-chain-app-dev
 
   <div id="services" class="services section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <div class="section-heading wow fadeInDown">
-                <h4>Kenali <em>Jenis-Jenis KB</em> untuk Keluarga Anda</h4>
-                <img src="{{asset('custom/assets/images/heading-line-dec.png')}}" alt="">
-                <p>Temukan berbagai metode Keluarga Berencana (KB) yang sesuai dengan kebutuhan Anda, mulai dari KB alami hingga metode modern. Kami hadir untuk memberikan informasi terpercaya dan memandu Anda dalam memilih solusi terbaik untuk perencanaan keluarga yang sehat dan bahagia.</p>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading wow fadeInDown">
+                    <h4>Kenali <em>Jenis-Jenis KB</em> untuk Keluarga Anda</h4>
+                    <img src="{{asset('custom/assets/images/heading-line-dec.png')}}" alt="">
+                    <p>Temukan berbagai metode Keluarga Berencana (KB) yang sesuai dengan kebutuhan Anda, mulai dari KB alami hingga metode modern. Kami hadir untuk memberikan informasi terpercaya dan memandu Anda dalam memilih solusi terbaik untuk perencanaan keluarga yang sehat dan bahagia.</p>
+                </div>
             </div>
         </div>
-      </div>
     </div>
     <div class="container">
-      <div class="row">
-        <!-- Card 1 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="service-item first-service">
-            <div class="icon"></div>
-            <h4>Pil KB</h4>
-            <p>
-                Pil Kontrasepsi Berbasis Hormon (Pil KB) adalah obat yang digunakan untuk mencegah kehamilan dikonsumsi setiap hari.
-            </p>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s">
-          <div class="service-item second-service">
-            <div class="icon"></div>
-            <h4>Suntik</h4>
-            <p>
-                Suntik KB adalah metode kontrasepsi hormonal melalui suntikan untuk mencegah kehamilan, tersedia dalam pilihan 1 bulan, 2 bulan, dan 3 bulan.
-            </p>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1.5s">
-          <div class="service-item third-service">
-            <div class="icon"></div>
-            <h4>Implan/Susuk</h4>
-            <p>KB Implan adalah kontrasepsi berbasis hormon yang ditanamkan di bawah kulit lengan atas untuk mencegah kehamilan.</p>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2s" data-wow-delay="2s">
-          <div class="service-item fourth-service">
-            <div class="icon"></div>
-            <h4>IUD/Spiral</h4>
-            <p>
-                Spiral (IUD) adalah alat kontrasepsi dalam rahim dengan masa pakai 3 hingga 10 tahun, tergantung jenisnya.
-            </p>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s">
-            <div class="service-item fifth-service">
-              <div class="icon"></div>
-              <h4>Kondom</h4>
-              <p>
-                Kondom adalah alat kontrasepsi terbuat dari silikon yang digunakan untuk mencegah kehamilan dan penyebaran penyakit menular seksual (PMS).
-              </p>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="service-item first-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>Pil KB</h4>
+                    <p>
+                        Pil Kontrasepsi Berbasis Hormon (Pil KB) adalah obat yang digunakan untuk mencegah kehamilan dikonsumsi setiap hari.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="service-item second-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>Suntik</h4>
+                    <p>
+                        Suntik KB adalah metode kontrasepsi hormonal melalui suntikan untuk mencegah kehamilan, tersedia dalam pilihan 1 bulan, 2 bulan, dan 3 bulan.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1.5s">
+                <div class="service-item third-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>Implan/Susuk</h4>
+                    <p>KB Implan adalah kontrasepsi berbasis hormon yang ditanamkan di bawah kulit lengan atas untuk mencegah kehamilan.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2s" data-wow-delay="2s">
+                <div class="service-item fourth-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>IUD/Spiral</h4>
+                    <p>
+                        Spiral (IUD) adalah alat kontrasepsi dalam rahim dengan masa pakai 3 hingga 10 tahun, tergantung jenisnya.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s">
+                <div class="service-item fifth-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/kondom.jpeg')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>Kondom</h4>
+                    <p>
+                        Kondom adalah alat kontrasepsi terbuat dari silikon yang digunakan untuk mencegah kehamilan dan penyebaran penyakit menular seksual (PMS).
+                    </p>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2.5s" data-wow-delay="3s">
+                <div class="service-item sixth-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/kalender-kb.png')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>KB Kalender</h4>
+                    <p>
+                        (Metode Kalender) adalah metode kontrasepsi alami yang memprediksi masa subur berdasarkan siklus menstruasi.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="3s" data-wow-delay="3.5s">
+                <div class="service-item seventh-service">
+                    <div class="mb-2">
+                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" class="img-fluid service-image">
+                    </div>
+                    <h4>Steril / MOW</h4>
+                    <p>
+                        KB Steril (Sterilisasi) adalah prosedur kontrasepsi permanen yang mencegah kehamilan dengan memotong atau mengikat saluran sperma (vas deferens) pada pria atau saluran telur (tuba fallopi) pada wanita.
+                    </p>
+                </div>
+            </div>
+            <!-- Button Start -->
+            <div class="col-lg-12 mt-4">
+                <div class="gradien-button text-center wow fadeInDown" data-wow-delay="4s" data-wow-duration="4s">
+                    <a href="{{route('kuisioner')}}" class="custom-gradient-button">
+                        <i class="fa fa-sign-in-alt"></i> Mulai
+                    </a>
+                </div>
             </div>
         </div>
-        <!-- Card 6 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2.5s" data-wow-delay="3s">
-            <div class="service-item sixth-service">
-              <div class="icon"></div>
-              <h4>KB Kalender</h4>
-              <p>
-                (Metode Kalender) adalah metode kontrasepsi alami yang memprediksi masa subur berdasarkan siklus menstruasi.
-              </p>
-            </div>
-        </div>
-        <!-- Card 7 -->
-        <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="3s" data-wow-delay="3.5s">
-            <div class="service-item seventh-service">
-              <div class="icon"></div>
-              <h4>Steril / MOW</h4>
-              <p>
-                KB Steril (Sterilisasi) adalah prosedur kontrasepsi permanen yang mencegah kehamilan dengan memotong atau mengikat saluran sperma (vas deferens) pada pria atau saluran telur (tuba fallopi) pada wanita.
-              </p>
-            </div>
-        </div>
-        <!-- Button Start -->
-        <div class="col-lg-12 mt-4">x
-            <div class="gradien-button text-center wow fadeInDown" data-wow-delay="4s" data-wow-duration="4s">
-              <a href="{{route('kuisioner')}}" class="custom-gradient-button">
-                <i class="fa fa-sign-in-alt"></i> Mulai
-              </a>
-            </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
 
 
   <footer id="newsletter">

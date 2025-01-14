@@ -136,7 +136,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-hipertensi">
-                        Open
+                        Check Tekanan
                     </button>
                 </div>
 
@@ -187,7 +187,7 @@
                 <!-- Tombol untuk Membuka Modal (Tombol ini bisa dihapus karena card akan membuka modal langsung) -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hivModal">
-                        Open
+                        Check IMS
                     </button>
                 </div>
 
@@ -212,7 +212,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-diabetes">
-                        Open
+                        Check GDA
                     </button>
                 </div>
 
@@ -512,7 +512,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample3" id="contentPilKb">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus diperhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                             <li>DIKONSUMSI DI JAM YANG SAMA PER 24 JAM (MISAL JAM HARI INI JAM 19.00 BESOK JUGA JAM 19.00)                                            </li>
@@ -586,6 +587,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample4" id="contentIud">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -669,6 +671,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-5" id="multiCollapseExample5" id="contenImplan">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -750,6 +753,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample6" id="contenSuntik">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -810,7 +814,7 @@
                                         <div class="p-2 d-flex align-items-stretch h-100">
                                             <div class="row">
                                                 <div class="col-4 col-md-3 d-flex align-items-center">
-                                                    <img src="{{ asset('assets/images/senggama-putus.png') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
+                                                    <img src="{{ asset('assets/icon-rekomendasi/steril.png') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
                                                 </div>
                                                 <div class="col-8 col-md-9 d-flex align-items-center">
                                                     <div style="font-size: 0.9rem;" class="ms-2">
@@ -825,6 +829,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample7" id="contentSteril">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -978,14 +983,14 @@
                         <li><strong>Normal gula darah:</strong> <140 mg/dL.</li>
                         <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
                     </ul>
-                    <h6>Kurang Darah (Anemia):</h6>
+                    {{-- <h6>Kurang Darah (Anemia):</h6>
                     <ul>
                         <li><strong>Dikatakan kurang darah jika:</strong></li>
                         <li>1) Hasil laboratorium cek darah pada hemoglobin (HB) <12 g/dL.</li>
                         <li>2) Mengonsumsi obat penambah darah seperti FE setiap hari.</li>
                         <li><strong>Normal HB:</strong> 12-16 g/dL.</li>
                         <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>
@@ -993,41 +998,41 @@
 </div>
 
   {{-- modal hipertensi --}}
-        <<!-- Modal untuk Input Tekanan Darah -->
-        <div class="modal fade" id="vertical-center-modal-hipertensi" tabindex="-1" aria-labelledby="vertical-center-modal-hipertensiLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="vertical-center-modal-hipertensiLabel">Masukkan Tekanan Darah</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal HTML -->
+<div class="modal fade" id="vertical-center-modal-hipertensi" tabindex="-1" aria-labelledby="vertical-center-modal-hipertensiLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="vertical-center-modal-hipertensiLabel">Masukkan Tekanan Darah</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="hipertensi-form">
+                    <div class="mb-3">
+                        <label for="tekananDarah" class="form-label">Tekanan Darah (misalnya: 190/90)</label>
+                        <input type="text" class="form-control" id="tekananDarah" placeholder="Masukkan tekanan darah">
                     </div>
-                    <div class="modal-body">
-                        <form id="hipertensi-form">
-                            <div class="mb-3">
-                                <label for="tekananDarah" class="form-label">Tekanan Darah (misalnya: 190/90)</label>
-                                <input type="text" class="form-control" id="tekananDarah" placeholder="Masukkan tekanan darah">
-                            </div>
-                            <div class="mb-3">
-                                <label for="statusDarah" class="form-label">Status Tekanan Darah</label>
-                                <input type="text" class="form-control" id="statusDarah" placeholder="Normal / Tinggi / Rendah" readonly>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                        <div class="mt-3">
-                            <h6>Keterangan:</h6>
-                            <ul>
-                                <li>Dikatakan tekanan darah tinggi jika:</li>
-                                <li>1) Pernah melakukan tensi darah di fasilitas kesehatan dengan tekanan darah >140/90</li>
-                                <li>2) Ada riwayat bawaan dari keluarga</li>
-                                <li>3) Mengonsumsi obat tensi resep dari dokter seperti: Amlodipin, captopril, nifedipine, minoxidil, verapamil, hidralazin</li>
-                                <li>• Normal tekanan darah tensi kurang dari <120/80</li>
-                                <li>• Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
-                            </ul>
-                        </div>
+                    <div class="mb-3">
+                        <label for="statusDarah" class="form-label">Status Tekanan Darah</label>
+                        <input type="text" class="form-control" id="statusDarah" placeholder="Normal / Prehipertensi / Hipertensi" readonly>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <div class="mt-3">
+                    <h6>Keterangan:</h6>
+                    <ul>
+                        <li>Dikatakan tekanan darah tinggi jika:</li>
+                        <li>1) Pernah melakukan tensi darah di fasilitas kesehatan dengan tekanan darah >140/90</li>
+                        <li>2) Ada riwayat bawaan dari keluarga</li>
+                        <li>3) Mengonsumsi obat tensi resep dari dokter seperti: Amlodipin, captopril, nifedipine, minoxidil, verapamil, hidralazin</li>
+                        <li>• Normal tekanan darah tensi kurang dari <120/80</li>
+                        <li>• Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
   {{-- modal --}}
                     <div
@@ -1080,6 +1085,14 @@
                                         <!-- Canvas for BMI Chart -->
                                         <canvas id="bmiChart" style="margin-top: 20px;"></canvas>
                                         <div id="bmiCategory" style="margin-top: 20px; font-weight: bold;"></div> <!-- Keterangan kategori BMI -->
+
+                                        <!-- Menambahkan rumus IMT -->
+                                        <div class="mt-4">
+                                            <h6>Rumus IMT (Indeks Massa Tubuh):</h6>
+                                            <p>IMT = <strong>Berat Badan (kg)</strong> / (<strong>Tinggi Badan (m)</strong> x <strong>Tinggi Badan (m)</strong>)</p>
+                                            <p>Contoh: <br> Berat Badan = 92 kg, Tinggi Badan = 175 cm</p>
+                                            <p>IMT = 92 / (1.75 x 1.75) = 30</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1311,22 +1324,28 @@
                             const match = tekananDarah.match(regex);
 
                             if (match) {
-                                const systolic = parseInt(match[1]);
-                                const diastolic = parseInt(match[2]);
-
+                                const sistolik = parseInt(match[1]);
+                                const diastolik = parseInt(match[2]);
 
                                 let status = "";
                                 let badgeClass = "";
 
-                                if (systolic > 140 || diastolic > 90) {
-                                    status = "Tinggi";
-                                    badgeClass = "bg-danger";
-                                } else if (systolic < 120 && diastolic < 80) {
+                                // Menentukan status berdasarkan kategori tekanan darah
+                                if (sistolik < 90 || diastolik < 60) {
+                                    status = "Hipotensi";
+                                    badgeClass = "bg-info"; // Ganti warna badge untuk tekanan darah rendah
+                                } else if (sistolik < 120 && diastolik < 80) {
                                     status = "Normal";
                                     badgeClass = "bg-success";
-                                } else {
-                                    status = "Rendah";
+                                } else if ((sistolik >= 120 && sistolik <= 139) || (diastolik >= 80 && diastolik <= 89)) {
+                                    status = "Prehipertensi";
                                     badgeClass = "bg-warning";
+                                } else if ((sistolik >= 140 && sistolik <= 159) || (diastolik >= 90 && diastolik <= 99)) {
+                                    status = "Hipertensi Tahap 1";
+                                    badgeClass = "bg-danger";
+                                } else if (sistolik >= 160 || diastolik >= 100) {
+                                    status = "Hipertensi Tahap 2";
+                                    badgeClass = "bg-dark";
                                 }
 
                                 // Memperbarui field status dan badge
@@ -1339,6 +1358,9 @@
                             }
                         });
                     </script>
+
+
+
 
 <script>
     const saveFormResultUrl = 'http://localhost:8000/save-form-result'; // Hardcode URL sementara

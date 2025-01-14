@@ -136,7 +136,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-hipertensi">
-                        Open
+                        Check Tekanan
                     </button>
                 </div>
 
@@ -187,7 +187,7 @@
                 <!-- Tombol untuk Membuka Modal (Tombol ini bisa dihapus karena card akan membuka modal langsung) -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hivModal">
-                        Open
+                        Info IMS
                     </button>
                 </div>
 
@@ -210,7 +210,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-diabetes">
-                        Open
+                        Check GDA
                     </button>
                 </div>
 
@@ -393,7 +393,8 @@
                                 <!-- Konten collaps pertama -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample1" id="contentKondom">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus diperhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                             <li>JANGAN GUNAKAN LEBIH DARI SATU KONDOM</li>
@@ -509,7 +510,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample3" id="contentPilKb">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus diperhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                             <li>DIKONSUMSI DI JAM YANG SAMA PER 24 JAM (MISAL JAM HARI INI JAM 19.00 BESOK JUGA JAM 19.00)                                            </li>
@@ -583,6 +585,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample4" id="contentIud">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -666,7 +669,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-5" id="multiCollapseExample5" id="contenImplan">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus dipverhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                            <li>
@@ -747,6 +751,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample6" id="contenSuntik">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -822,6 +827,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample7" id="contentSteril">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -971,14 +977,14 @@
                                     <li><strong>Normal gula darah:</strong> <140 mg/dL.</li>
                                     <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
                                 </ul>
-                                <h6>Kurang Darah (Anemia):</h6>
+                                {{-- <h6>Kurang Darah (Anemia):</h6>
                                 <ul>
                                     <li><strong>Dikatakan kurang darah jika:</strong></li>
                                     <li>1) Hasil laboratorium cek darah pada hemoglobin (HB) <12 g/dL.</li>
                                     <li>2) Mengonsumsi obat penambah darah seperti FE setiap hari.</li>
                                     <li><strong>Normal HB:</strong> 12-16 g/dL.</li>
                                     <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>

@@ -95,7 +95,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-hipertensi">
-                        Open
+                        Chaeck Tekanan
                     </button>
                 </div>
 
@@ -146,7 +146,7 @@
                 <!-- Tombol untuk Membuka Modal (Tombol ini bisa dihapus karena card akan membuka modal langsung) -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hivModal">
-                        Open
+                        Check IMS
                     </button>
                 </div>
 
@@ -171,7 +171,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-diabetes">
-                        Open
+                        Check GDA
                     </button>
                 </div>
 
@@ -470,7 +470,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample3" id="contentPilKb">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus diperhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                             <li>DIKONSUMSI DI JAM YANG SAMA PER 24 JAM (MISAL JAM HARI INI JAM 19.00 BESOK JUGA JAM 19.00)                                            </li>
@@ -544,7 +545,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample4" id="contentIud">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus dipverhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                             <li>
@@ -627,7 +629,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-5" id="multiCollapseExample5" id="contenImplan">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">Harus dipverhatikan!</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                            <li>
@@ -708,7 +711,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample6" id="contenSuntik">
                                     <div class="card card-body">
-                                        <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
+                                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="" style="height: 240px;">
+                                        <h5 class="text-danger mt-2">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
                                            <li>
@@ -783,6 +787,7 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample7" id="contentSteril">
                                     <div class="card card-body">
+                                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" style="height: 240px;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>

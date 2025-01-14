@@ -214,7 +214,7 @@
                                 <th>Sikap 4</th>
                                 <th>Sikap 5</th>
                                 <th>Sikap 6</th>
-                                <th>Sikap (%)</th>
+                                <th>Point Sikap</th>
                                 <th>Sikap Kategori</th>
                                 <th>Tindakan 1</th>
                                 <th>Tindakan 2</th>
@@ -256,7 +256,7 @@
                                 <td>{{ $row->q4 }}</td>
                                 <td>{{ $row->q5 }}</td>
                                 <td>{{ $row->q6 }}</td>
-                                <td>{{ $row->sikap_percentage }}%</td>
+                                <td>{{ $row->sikap_percentage }}</td>
                                 <td>{{ $row->sikap_kategori }}</td>
                                 <td>{{ $row->action1 }}</td>
                                 <td>{{ $row->action2 }}</td>
@@ -304,7 +304,7 @@
                                 <th>Sikap 4</th>
                                 <th>Sikap 5</th>
                                 <th>Sikap 6</th>
-                                <th>Sikap (%)</th>
+                                <th>Point Sikap</th>
                                 <th>Sikap Kategori</th>
                                 <th>Tindakan 1</th>
                                 <th>Tindakan 2</th>
@@ -346,7 +346,7 @@
                                 <td>{{ $row->q4 }}</td>
                                 <td>{{ $row->q5 }}</td>
                                 <td>{{ $row->q6 }}</td>
-                                <td>{{ $row->sikap_percentage }}%</td>
+                                <td>{{ $row->sikap_percentage }}</td>
                                 <td>{{ $row->sikap_kategori }}</td>
                                 <td>{{ $row->action1 }}</td>
                                 <td>{{ $row->action2 }}</td>
