@@ -512,7 +512,12 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample3" id="contentPilKb">
                                     <div class="card card-body">
-                                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="" style="height: 240px;">
+                                        <img
+                                            src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}"
+                                            alt="Gambar Pil KB"
+                                            class="img-fluid"
+                                            style="max-height: 240px; object-fit: contain; margin: 0 auto; display: block;"
+                                        >
                                         <h5 class="text-danger mt-2">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -587,7 +592,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample4" id="contentIud">
                                     <div class="card card-body">
-                                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="" style="height: 240px;">
+                                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" class="img-fluid"
+                                        style="max-height: 240px; object-fit: contain; margin: 0 auto; display: block;">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -671,7 +677,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-5" id="multiCollapseExample5" id="contenImplan">
                                     <div class="card card-body">
-                                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="" style="height: 240px;">
+                                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" class="img-fluid"
+                                        style="max-height: 240px; object-fit: contain; margin: 0 auto; display: block;">
                                         <h5 class="text-danger">Harus dipverhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -753,7 +760,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample6" id="contenSuntik">
                                     <div class="card card-body">
-                                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="" style="height: 240px;">
+                                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" class="img-fluid"
+                                        style="max-height: 240px; object-fit: contain; margin: 0 auto; display: block;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
@@ -829,7 +837,8 @@
                                 <!-- Konten collaps Ketiga -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample7" id="contentSteril">
                                     <div class="card card-body">
-                                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" style="height: 240px;">
+                                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" class="img-fluid"
+                                        style="max-height: 240px; object-fit: contain; margin: 0 auto; display: block;">
                                         <h5 class="text-danger">JARAK WAKTU PEMAKAIAN YANG PERLU DIPERHATIKAN !</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>
