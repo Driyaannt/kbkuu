@@ -396,6 +396,12 @@
                                 <!-- Konten collaps pertama -->
                                 <div class="collapse multi-collapse mt-2" id="multiCollapseExample1" id="contentKondom">
                                     <div class="card card-body">
+                                        <img
+                                            src="{{asset('assets/icon-rekomendasi/kondom.jpeg')}}"
+                                            alt="Gambar Pil KB"
+                                            class="img-fluid"
+                                            style="max-height: 240px; object-fit: contain; margin: 0 auto; display: block;"
+                                        >
                                         <h5 class="text-danger">Harus diperhatikan!</h5>
                                         <p>Jika Anda memilih metode KB ini, Anda harus memperhatikan beberapa hal berikut:</p>
                                         <ol>

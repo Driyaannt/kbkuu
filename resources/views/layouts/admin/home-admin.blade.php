@@ -10,21 +10,37 @@
     border: 2px solid #0d6efd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.chart-item {
+    margin-bottom: 20px; /* Memberikan jarak antar chart */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan pada card */
+    border: 1px solid #e0e0e0; /* Menambahkan border tipis pada card */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
 </style>
 
 <div class="row mt-3">
     <div class="col-md-6 col-lg-4">
-      <div class="card rounded-3 card-hover">
+      <div class="card rounded-3 card-hover"  id="cardDataTable" data-target="dataTableWrapper">
         <a href="#" class="stretched-link"></a>
         <div class="card-body">
           <div class="d-flex align-items-center">
-            <span class="flex-shrink-0"><i class="ti ti-photo text-warning display-6"></i></span>
+            <span class="flex-shrink-0 mt-1"><box-icon name='dashboard' type='solid' color='#ffccd5' ></box-icon></span>
             <div class="ms-4">
-              <h4 class="card-title text-dark mt-2">Dashboard (Coming Soon)</h4>
-              {{-- <h6 class="card-subtitle mb-0 fs-2 fw-normal">
-                2.4GB Junk File
-              </h6>
-              <span class="fs-2 mt-1 ">Folder: 26 Items: 159 Used: 23.6GB</span> --}}
+              <h4 class="card-title text-dark mt-2">Dashboard</h4>
             </div>
           </div>
         </div>
@@ -35,7 +51,7 @@
             <a href="#" class="stretched-link"></a>
             <div class="card-body">
                 <div class="d-flex align-items-center">
-                    <span class="flex-shrink-0"><i class="ti ti-users text-success display-6"></i></span>
+                    <span class="flex-shrink-0"><box-icon type='solid'color='#ffccd5' name='objects-vertical-bottom'></box-icon></span>
                     <div class="ms-4">
                         <h4 class="card-title text-dark mt-2">Data Report Hasil</h4>
                     </div>
@@ -49,7 +65,7 @@
             <a href="#" class="stretched-link"></a>
             <div class="card-body">
                 <div class="d-flex align-items-center">
-                    <span class="flex-shrink-0"><i class="ti ti-brand-google-drive text-info display-6"></i></span>
+                    <span class="flex-shrink-0"><box-icon name='receipt' type='solid'color='#ffccd5'></box-icon></span>
                     <div class="ms-4">
                         <h4 class="card-title text-dark mt-2">Data (Pretest) Kuisioner</h4>
                     </div>
@@ -62,7 +78,7 @@
             <a href="#" class="stretched-link"></a>
             <div class="card-body">
                 <div class="d-flex align-items-center">
-                    <span class="flex-shrink-0"><i class="ti ti-brand-google-drive text-info display-6"></i></span>
+                    <span class="flex-shrink-0"><box-icon name='file' type='solid' color='#ffccd5' ></box-icon></span>
                     <div class="ms-4">
                         <h4 class="card-title text-dark mt-2">Data (Posttest) Kuisioner</h4>
                     </div>
@@ -366,10 +382,58 @@
                         </tbody>
                     </table>
                 </div>
+
+
+                <div class="chart-container" id="chartContainer" style="display: none">
+                    <div class="row">
+                        <!-- Chart Berdasarkan Pregnancy Status -->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="chart-item card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chart Berdasarkan Pregnancy Status</h3>
+                                    <canvas id="pregnancyChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Berdasarkan Age Category -->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="chart-item card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chart Berdasarkan Age Category</h3>
+                                    <canvas id="ageCategoryChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Berdasarkan Section -->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="chart-item card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chart Berdasarkan Section</h3>
+                                    <canvas id="sectionChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Rekomendasi KB Berdasarkan Tahun -->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="chart-item card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Rekomendasi KB Berdasarkan Tahun</h3>
+                                    <canvas id="recommendedByYearChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -384,78 +448,100 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-    // Inisialisasi DataTable 1
-    $('#dataTable1').DataTable({
-        dom: '<"d-flex justify-content-between"lfB>rtip',
-        buttons: [
-            { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
-            { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
-            { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
-            { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
-            { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
-        ],
-        scrollX: true,
-        scrollY: '400px',
-        responsive: true,
-        paging: true,
-        searching: true,
-        info: true
-    });
+        $(document).ready(function () {
+        // Saat halaman dimuat pertama kali, aktifkan kartu Dashboard
+        $('#cardDataTable').addClass('active');  // Menambahkan kelas active pada kartu pertama
 
-    // Inisialisasi DataTable 2
-    $('#dataTable2').DataTable({
-        dom: '<"d-flex justify-content-between"lfB>rtip',
-        buttons: [
-            { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
-            { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
-            { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
-            { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
-            { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
-        ],
-        scrollX: true,
-        scrollY: '400px',
-        responsive: true,
-        paging: true,
-        searching: true,
-        info: true
-    });
+        // Ketika klik pada cardDataTable, tampilkan chart
+        $('#cardDataTable').on('click', function () {
+            $('#chartContainer').show();
+            $(this).addClass('active').siblings().removeClass('active');
+        });
 
-    $('#dataTable3').DataTable({
-        dom: '<"d-flex justify-content-between"lfB>rtip',
-        buttons: [
-            { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
-            { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
-            { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
-            { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
-            { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
-        ],
-        scrollX: true,
-        scrollY: '400px',
-        responsive: true,
-        paging: true,
-        searching: true,
-        info: true
-    });
+        // Untuk kartu lainnya, sembunyikan chart
+        $('#cardDataTable1').on('click', function () {
 
-    // Logika switch antara tabel
-    $('.card-hover').on('click', function () {
-        const target = $(this).data('target');
-        $('.table-responsive').hide(); // Sembunyikan semua tabel
-        $(`#${target}`).show(); // Tampilkan tabel yang dipilih
-    });
+            $('#chartContainer').hide();
+            $(this).addClass('active').siblings().removeClass('active');
+        });
 
-    // Tampilkan tabel pertama secara default
-    $('#dataTable1Wrapper').show();
-});
+        $('#cardDataTable2').on('click', function () {
+            $('#chartContainer').hide();
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+
+        $('#cardDataTable3').on('click', function () {
+            $('#chartContainer').hide();
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+
+        // Inisialisasi DataTable 1
+        $('#dataTable1').DataTable({
+            dom: '<"d-flex justify-content-between"lfB>rtip',
+            buttons: [
+                { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+                { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+                { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+                { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+                { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+            ],
+            scrollX: true,
+            scrollY: '400px',
+            responsive: true,
+            paging: true,
+            searching: true,
+            info: true
+        });
+
+        // Inisialisasi DataTable 2
+        $('#dataTable2').DataTable({
+            dom: '<"d-flex justify-content-between"lfB>rtip',
+            buttons: [
+                { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+                { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+                { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+                { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+                { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+            ],
+            scrollX: true,
+            scrollY: '400px',
+            responsive: true,
+            paging: true,
+            searching: true,
+            info: true
+        });
+
+        $('#dataTable3').DataTable({
+            dom: '<"d-flex justify-content-between"lfB>rtip',
+            buttons: [
+                { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+                { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+                { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+                { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+                { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+            ],
+            scrollX: true,
+            scrollY: '400px',
+            responsive: true,
+            paging: true,
+            searching: true,
+            info: true
+        });
+
+        // Logika switch antara tabel
+        $('.card-hover').on('click', function () {
+            const target = $(this).data('target');
+            $('.table-responsive').hide(); // Sembunyikan semua tabel
+            $(`#${target}`).show(); // Tampilkan tabel yang dipilih
+        });
+
+        // Tampilkan tabel pertama secara default
+        $('#chartContainer').show();
+    });
 
 </script>
 
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    // Tampilkan tabel dan pilih kartu default
-    showTable("dataTable1Wrapper", "cardDataTable1");
-    });
 
     function switchTable(card) {
         const targetTableId = card.getAttribute("data-target");
@@ -488,6 +574,135 @@
             targetCard.classList.add("active");
         }
     }
+</script>
+
+<script>
+    // Data Section
+    const sectionLabels = {!! json_encode($sectionData->keys()) !!};
+    const sectionCounts = {!! json_encode($sectionData->values()) !!};
+
+    // Data Pregnancy Status
+    const pregnancyLabels = {!! json_encode($pregnancyData->keys()) !!};
+    const pregnancyCounts = {!! json_encode($pregnancyData->values()) !!};
+
+    // Chart Berdasarkan Section
+    const sectionChart = new Chart(document.getElementById('sectionChart'), {
+        type: 'bar',
+        data: {
+            labels: sectionLabels,
+            datasets: [{
+                label: 'Jumlah',
+                data: sectionCounts,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Data Berdasarkan Section' }
+            }
+        }
+    });
+
+    // Chart Berdasarkan Pregnancy Status
+    const pregnancyChart = new Chart(document.getElementById('pregnancyChart'), {
+        type: 'pie',
+        data: {
+            labels: pregnancyLabels,
+            datasets: [{
+                data: pregnancyCounts,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Data Berdasarkan Pregnancy Status' }
+            }
+        }
+    });
+</script>
+
+
+<script>
+    // Data Age Category
+    const ageCategoryLabels = {!! json_encode($ageCategoryData->keys()) !!};
+    const ageCategoryCounts = {!! json_encode($ageCategoryData->values()) !!};
+
+    // Data Rekomendasi KB Berdasarkan Tahun
+    const recommendedByYearData = {!! json_encode($recommendedDataByYear) !!};
+    const recommendedYears = Object.keys(recommendedByYearData);
+    const recommendedDatasets = Object.keys(recommendedByYearData[recommendedYears[0]]).map((key) => ({
+        label: key,
+        data: recommendedYears.map((year) => recommendedByYearData[year][key] || 0),
+        backgroundColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`,
+        borderColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`,
+        borderWidth: 1
+    }));
+
+    // Chart Berdasarkan Age Category
+    const ageCategoryChart = new Chart(document.getElementById('ageCategoryChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ageCategoryLabels,
+            datasets: [{
+                label: 'Jumlah',
+                data: ageCategoryCounts,
+                backgroundColor: [
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                ],
+                borderColor: [
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Data Berdasarkan Age Category' }
+            }
+        }
+    });
+
+    // Chart Rekomendasi KB Berdasarkan Tahun
+    const recommendedByYearChart = new Chart(document.getElementById('recommendedByYearChart'), {
+        type: 'bar',
+        data: {
+            labels: recommendedYears,
+            datasets: recommendedDatasets
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Rekomendasi KB Berdasarkan Tahun' }
+            },
+            scales: {
+                x: { stacked: true },
+                y: { stacked: true, beginAtZero: true }
+            }
+        }
+    });
 </script>
 
 @endsection
