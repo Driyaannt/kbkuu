@@ -943,14 +943,14 @@
                         <li><strong>Normal gula darah:</strong> <140 mg/dL.</li>
                         <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
                     </ul>
-                    <h6>Kurang Darah (Anemia):</h6>
+                    {{-- <h6>Kurang Darah (Anemia):</h6>
                     <ul>
                         <li><strong>Dikatakan kurang darah jika:</strong></li>
                         <li>1) Hasil laboratorium cek darah pada hemoglobin (HB) <12 g/dL.</li>
                         <li>2) Mengonsumsi obat penambah darah seperti FE setiap hari.</li>
                         <li><strong>Normal HB:</strong> 12-16 g/dL.</li>
                         <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>
@@ -1045,6 +1045,13 @@
                                         <!-- Canvas for BMI Chart -->
                                         <canvas id="bmiChart" style="margin-top: 20px;"></canvas>
                                         <div id="bmiCategory" style="margin-top: 20px; font-weight: bold;"></div> <!-- Keterangan kategori BMI -->
+                                     <!-- Menambahkan rumus IMT -->
+                                     <div class="mt-4">
+                                        <h6>Rumus IMT (Indeks Massa Tubuh):</h6>
+                                        <p>IMT = <strong>Berat Badan (kg)</strong> / (<strong>Tinggi Badan (m)</strong> x <strong>Tinggi Badan (m)</strong>)</p>
+                                        <p>Contoh: <br> Berat Badan = 92 kg, Tinggi Badan = 175 cm</p>
+                                        <p>IMT = 92 / (1.75 x 1.75) = 30</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1267,44 +1274,50 @@
  </script>
  {{-- hipertensi --}}
  <script>
-     document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
-         e.preventDefault();
-         const tekananDarah = document.getElementById('tekananDarah').value;
-         const statusDarahField = document.getElementById('statusDarah');
-         const badge = document.getElementById('hipertensi-badge');
+    document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const tekananDarah = document.getElementById('tekananDarah').value;
+        const statusDarahField = document.getElementById('statusDarah');
+        const badge = document.getElementById('hipertensi-badge');
 
-         const regex = /^(\d{1,3})\/(\d{1,3})$/;
-         const match = tekananDarah.match(regex);
+        const regex = /^(\d{1,3})\/(\d{1,3})$/;
+        const match = tekananDarah.match(regex);
 
-         if (match) {
-             const systolic = parseInt(match[1]);
-             const diastolic = parseInt(match[2]);
+        if (match) {
+            const sistolik = parseInt(match[1]);
+            const diastolik = parseInt(match[2]);
 
+            let status = "";
+            let badgeClass = "";
 
-             let status = "";
-             let badgeClass = "";
+            // Menentukan status berdasarkan kategori tekanan darah
+            if (sistolik < 90 || diastolik < 60) {
+                status = "Hipotensi";
+                badgeClass = "bg-info"; // Ganti warna badge untuk tekanan darah rendah
+            } else if (sistolik < 120 && diastolik < 80) {
+                status = "Normal";
+                badgeClass = "bg-success";
+            } else if ((sistolik >= 120 && sistolik <= 139) || (diastolik >= 80 && diastolik <= 89)) {
+                status = "Prehipertensi";
+                badgeClass = "bg-warning";
+            } else if ((sistolik >= 140 && sistolik <= 159) || (diastolik >= 90 && diastolik <= 99)) {
+                status = "Hipertensi Tahap 1";
+                badgeClass = "bg-danger";
+            } else if (sistolik >= 160 || diastolik >= 100) {
+                status = "Hipertensi Tahap 2";
+                badgeClass = "bg-dark";
+            }
 
-             if (systolic > 140 || diastolic > 90) {
-                 status = "Tinggi";
-                 badgeClass = "bg-danger";
-             } else if (systolic < 120 && diastolic < 80) {
-                 status = "Normal";
-                 badgeClass = "bg-success";
-             } else {
-                 status = "Rendah";
-                 badgeClass = "bg-warning";
-             }
+            // Memperbarui field status dan badge
+            statusDarahField.value = status;
+            badge.textContent = status;
+            badge.className = `badge mt-1 ${badgeClass}`;
 
-             // Memperbarui field status dan badge
-             statusDarahField.value = status;
-             badge.textContent = status;
-             badge.className = `badge mt-1 ${badgeClass}`;
-
-         } else {
-             alert('Format tekanan darah tidak valid. Gunakan format 190/90.');
-         }
-     });
- </script>
+        } else {
+            alert('Format tekanan darah tidak valid. Gunakan format 190/90.');
+        }
+    });
+</script>
 
 <script>
     const saveFormResultUrl = 'http://localhost:8000/save-form-result'; // Hardcode URL sementara

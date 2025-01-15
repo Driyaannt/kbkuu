@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MetodeKBController;
 use App\Http\Controllers\KuisionerController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 
 
 // route home
@@ -47,6 +48,9 @@ Route::get('/main-menu', function () {
 Route::get('/dashboard', function () {
     return view('layouts.dashboard.dashboard');
 })->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 
 Route::get('/usage-category', function () {

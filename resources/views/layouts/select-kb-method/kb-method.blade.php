@@ -503,7 +503,7 @@
                                         <div class="p-2 d-flex align-items-stretch h-100">
                                             <div class="row">
                                                 <div class="col-4 col-md-3 d-flex align-items-center">
-                                                    <img src="{{ asset('assets/images/senggama-putus.png') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
+                                                    <img src="{{ asset('assets/icon-rekomendasi/PIL.jpg') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
                                                 </div>
                                                 <div class="col-8 col-md-9 d-flex align-items-center">
                                                     <div style="font-size: 0.9rem;" class="ms-2">
@@ -583,7 +583,7 @@
                                         <div class="p-2 d-flex align-items-stretch h-100">
                                             <div class="row">
                                                 <div class="col-4 col-md-3 d-flex align-items-center">
-                                                    <img src="{{ asset('assets/images/senggama-putus.png') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
+                                                    <img src="{{ asset('assets/icon-rekomendasi/IUD.jpg') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
                                                 </div>
                                                 <div class="col-8 col-md-9 d-flex align-items-center">
                                                     <div style="font-size: 0.9rem;" class="ms-2">
@@ -668,7 +668,7 @@
                                         <div class="p-2 d-flex align-items-stretch h-100">
                                             <div class="row">
                                                 <div class="col-4 col-md-3 d-flex align-items-center">
-                                                    <img src="{{ asset('assets/images/senggama-putus.png') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
+                                                    <img src="{{ asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
                                                 </div>
                                                 <div class="col-8 col-md-9 d-flex align-items-center">
                                                     <div style="font-size: 0.9rem;" class="ms-2">
@@ -751,7 +751,7 @@
                                         <div class="p-2 d-flex align-items-stretch h-100">
                                             <div class="row">
                                                 <div class="col-4 col-md-3 d-flex align-items-center">
-                                                    <img src="{{ asset('assets/images/senggama-putus.png') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
+                                                    <img src="{{ asset('assets/icon-rekomendasi/SUNTIK.jpg') }}" class="rounded img-fluid" style="width: 100px; height: 40px; object-fit: cover;" />
                                                 </div>
                                                 <div class="col-8 col-md-9 d-flex align-items-center">
                                                     <div style="font-size: 0.9rem;" class="ms-2">
