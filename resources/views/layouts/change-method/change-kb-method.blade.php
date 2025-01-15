@@ -192,7 +192,7 @@
                 </div>
 
                 <div class="col-md-5 col-lg-5 card-hover" id="card4">
-                    <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA')">
+                    <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA')">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -200,7 +200,7 @@
                                     <h6 class="number-text mt-2">4</h6>
                                 </span>
                                 <div class="ms-3">
-                                    <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA</h6>
+                                    <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA</h6>
                                 </div>
                             </div>
                             <div id="diabetes-badge" class="badge mt-1"></div>
@@ -1509,7 +1509,7 @@
                     arrayValue = ['kondom', 'senggama putus'];
                 } else if (selection === 'RIWAYAT PENYAKIT IMS DAN HIV') {
                     arrayValue = ['kondom'];
-                } else if (selection === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') {
+                } else if (selection === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') {
                     arrayValue = ['kondom', 'senggama putus'];
                 }
             } else if (uniqueSelections.length === 2) {
@@ -1520,17 +1520,17 @@
                 } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
+                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom', 'senggama putus'];
                 } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
+                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom', 'senggama putus'];
-                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
+                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
                     arrayValue = ['kondom'];
                 }
             }
@@ -1547,7 +1547,7 @@
                     arrayValue = ['kondom', 'senggama putus','iud'];
                 } else if (selection === 'RIWAYAT PENYAKIT IMS DAN HIV') {
                     arrayValue = ['kondom'];
-                } else if (selection === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') {
+                } else if (selection === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') {
                     arrayValue = ['kondom', 'senggama putus','iud'];
                 }
             } else if (uniqueSelections.length === 2) {
@@ -1558,17 +1558,17 @@
                 } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
+                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom', 'senggama putus','iud'];
                 } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
+                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom', 'senggama putus','iud'];
-                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
+                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
                     arrayValue = ['kondom'];
                 }
             }
@@ -1587,7 +1587,7 @@
                     arrayValue = ['kondom', 'senggama putus'];
                 } else if (selection === 'RIWAYAT PENYAKIT IMS DAN HIV') {
                     arrayValue = ['kondom'];
-                } else if (selection === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') {
+                } else if (selection === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') {
                     arrayValue = ['kondom', 'senggama putus'];
                 }
             } else if (uniqueSelections.length === 2) {
@@ -1598,17 +1598,17 @@
                 } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
+                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom', 'senggama putus'];
                 } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
+                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom', 'senggama putus'];
-                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
+                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
                     arrayValue = ['kondom'];
                 }
             }
@@ -1625,7 +1625,7 @@
                     arrayValue = ['kondom', 'senggama putus','steril'];
                 } else if (selection === 'RIWAYAT PENYAKIT IMS DAN HIV') {
                     arrayValue = ['kondom'];
-                } else if (selection === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') {
+                } else if (selection === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') {
                     arrayValue = ['kondom', 'senggama putus','steril'];
                 }
             } else if (uniqueSelections.length === 2) {
@@ -1636,17 +1636,17 @@
                 } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
+                } else if ((first === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT TEKANAN DARAH TINGGI ATAU HIPERTENSI (>140/90)')) {
                     arrayValue = ['kondom', 'senggama putus','iud'];
                 } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT IMS DAN HIV') ||
                             (first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom'];
-                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
+                } else if ((first === 'OBESITAS IMT >27' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'OBESITAS IMT >27')) {
                     arrayValue = ['kondom', 'senggama putus','iud'];
-                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA') ||
-                            (first === 'RIWAYAT PENYAKIT JATUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
+                } else if ((first === 'RIWAYAT PENYAKIT IMS DAN HIV' && second === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA') ||
+                            (first === 'RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA' && second === 'RIWAYAT PENYAKIT IMS DAN HIV')) {
                     arrayValue = ['kondom'];
                 }
             }
