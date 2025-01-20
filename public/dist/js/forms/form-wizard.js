@@ -206,7 +206,7 @@ $(".validation-wizard").steps({
                             confirmButtonText: 'OK',
                         }).then(() => {
                             // Redirect ke route main-menu
-                            window.location.href = '/post-test-kuisioner';
+                            window.location.href = '/';
                         });
                     })
                     .catch((error) => {

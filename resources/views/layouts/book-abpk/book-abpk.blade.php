@@ -18,6 +18,7 @@
                     <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-md">
                         <i class="bi bi-eye"></i> Download
                     </a>
+                    <a href="{{route('post-test-kuisioner')}}" class="btn btn-secondary btn-md" >Isi PostTest Anda</a>
                 </div>
             </div>
             <div class="col-3">

@@ -83,10 +83,9 @@ https://templatemo.com/tm-570-chain-app-dev
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="{{route('homepage')}}" class="logo">
+            <a href="{{route('usage-category')}}" class="logo">
               <img src="{{ asset('assets/icons/Kbkuu.png') }}" alt="Chain App Dev" style="width: 200px !important;">
             </a>
-            <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
@@ -95,7 +94,7 @@ https://templatemo.com/tm-570-chain-app-dev
               {{-- <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Mulai</a></div></li> --}}
               <li>
                 <div class="gradien-button text-center">
-                    <a href="{{route('kuisioner')}}" class="custom-gradient-button">
+                    <a href="{{route('usage-category')}}" class="custom-gradient-button">
                       <i class="fa fa-sign-in-alt"></i> Mulai
                     </a>
                 </div>
@@ -328,7 +327,7 @@ https://templatemo.com/tm-570-chain-app-dev
             <!-- Button Start -->
             <div class="col-lg-12 mt-4">
                 <div class="gradien-button text-center wow fadeInDown" data-wow-delay="4s" data-wow-duration="4s">
-                    <a href="{{route('kuisioner')}}" class="custom-gradient-button">
+                    <a href="{{route('usage-category')}}" class="custom-gradient-button">
                         <i class="fa fa-sign-in-alt"></i> Mulai
                     </a>
                 </div>

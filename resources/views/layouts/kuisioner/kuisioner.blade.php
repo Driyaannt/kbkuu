@@ -548,7 +548,7 @@
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redirect ke halaman lain setelah tombol OK diklik
-                                window.location.href = '/usage-category';
+                                window.location.href = '/book-abpk';
                             }
                         });
                     },
