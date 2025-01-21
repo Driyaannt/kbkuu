@@ -85,7 +85,7 @@ https://templatemo.com/tm-570-chain-app-dev
         <div class="col-lg-4 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
           <div class="service-item first-service">
             <div class="icon"></div>
-            <h4>Menunuda Kehamilan</h4>
+            <h4>Menunda Kehamilan</h4>
             <p>
                 Wanita Usia Subur (WUS) yang sudah menikah dengan usia kurang dari atau (20 tahun dianjurkan untuk menunda kehamilan)
             </p>
