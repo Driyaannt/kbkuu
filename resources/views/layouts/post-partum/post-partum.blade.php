@@ -95,7 +95,7 @@
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-hipertensi">
-                        Chaeck Tekanan
+                        Check Tekanan
                     </button>
                 </div>
 
@@ -976,6 +976,7 @@
                                 <label for="statusDarah" class="form-label">Status Tekanan Darah</label>
                                 <input type="text" class="form-control" id="statusDarah" placeholder="Normal / Tinggi / Rendah" readonly>
                             </div>
+                            <div id="hipertensi-badge"></div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                         <div class="mt-3">
@@ -1275,48 +1276,48 @@
  {{-- hipertensi --}}
  <script>
     document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const tekananDarah = document.getElementById('tekananDarah').value;
-        const statusDarahField = document.getElementById('statusDarah');
-        const badge = document.getElementById('hipertensi-badge');
+    e.preventDefault();
+    const tekananDarah = document.getElementById('tekananDarah').value;
+    const statusDarahField = document.getElementById('statusDarah');
+    const badge = document.getElementById('hipertensi-badge');
 
-        const regex = /^(\d{1,3})\/(\d{1,3})$/;
-        const match = tekananDarah.match(regex);
+    const regex = /^(\d{1,3})\/(\d{1,3})$/;
+    const match = tekananDarah.match(regex);
 
-        if (match) {
-            const sistolik = parseInt(match[1]);
-            const diastolik = parseInt(match[2]);
+    if (match) {
+        const sistolik = parseInt(match[1]);
+        const diastolik = parseInt(match[2]);
 
-            let status = "";
-            let badgeClass = "";
+        let status = "";
+        let badgeClass = "";
 
-            // Menentukan status berdasarkan kategori tekanan darah
-            if (sistolik < 90 || diastolik < 60) {
-                status = "Hipotensi";
-                badgeClass = "bg-info"; // Ganti warna badge untuk tekanan darah rendah
-            } else if (sistolik < 120 && diastolik < 80) {
-                status = "Normal";
-                badgeClass = "bg-success";
-            } else if ((sistolik >= 120 && sistolik <= 139) || (diastolik >= 80 && diastolik <= 89)) {
-                status = "Prehipertensi";
-                badgeClass = "bg-warning";
-            } else if ((sistolik >= 140 && sistolik <= 159) || (diastolik >= 90 && diastolik <= 99)) {
-                status = "Hipertensi Tahap 1";
-                badgeClass = "bg-danger";
-            } else if (sistolik >= 160 || diastolik >= 100) {
-                status = "Hipertensi Tahap 2";
-                badgeClass = "bg-dark";
-            }
-
-            // Memperbarui field status dan badge
-            statusDarahField.value = status;
-            badge.textContent = status;
-            badge.className = `badge mt-1 ${badgeClass}`;
-
-        } else {
-            alert('Format tekanan darah tidak valid. Gunakan format 190/90.');
+        if (sistolik < 90 || diastolik < 60) {
+            status = "Hipotensi";
+            badgeClass = "bg-info";
+        } else if (sistolik < 120 && diastolik < 80) {
+            status = "Normal";
+            badgeClass = "bg-success";
+        } else if ((sistolik >= 120 && sistolik <= 139) || (diastolik >= 80 && diastolik <= 89)) {
+            status = "Normal";
+            badgeClass = "bg-success";
+        } else if ((sistolik >= 140 && sistolik <= 179) || (diastolik >= 90 && diastolik <= 109)) {
+            status = "Hipertensi";
+            badgeClass = "bg-danger";
+        } else if (sistolik >= 180 || diastolik >= 110) {
+            status = "Hipertensi Stadium 3 (Parah)";
+            badgeClass = "bg-dark";
         }
-    });
+
+
+        // Memperbarui field status dan badge
+        statusDarahField.value = status;
+        badge.textContent = status;
+        badge.className = `badge mt-1 ${badgeClass}`;
+    } else {
+        alert('Format tekanan darah tidak valid. Gunakan format 190/90.');
+    }
+});
+
 </script>
 
 <script>

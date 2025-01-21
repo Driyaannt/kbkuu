@@ -1348,18 +1348,18 @@
                                 // Menentukan status berdasarkan kategori tekanan darah
                                 if (sistolik < 90 || diastolik < 60) {
                                     status = "Hipotensi";
-                                    badgeClass = "bg-info"; // Ganti warna badge untuk tekanan darah rendah
+                                    badgeClass = "bg-info";
                                 } else if (sistolik < 120 && diastolik < 80) {
                                     status = "Normal";
                                     badgeClass = "bg-success";
                                 } else if ((sistolik >= 120 && sistolik <= 139) || (diastolik >= 80 && diastolik <= 89)) {
-                                    status = "Prehipertensi";
-                                    badgeClass = "bg-warning";
-                                } else if ((sistolik >= 140 && sistolik <= 159) || (diastolik >= 90 && diastolik <= 99)) {
-                                    status = "Hipertensi Tahap 1";
+                                    status = "Normal";
+                                    badgeClass = "bg-success";
+                                } else if ((sistolik >= 140 && sistolik <= 179) || (diastolik >= 90 && diastolik <= 109)) {
+                                    status = "Hipertensi";
                                     badgeClass = "bg-danger";
-                                } else if (sistolik >= 160 || diastolik >= 100) {
-                                    status = "Hipertensi Tahap 2";
+                                } else if (sistolik >= 180 || diastolik >= 110) {
+                                    status = "Hipertensi Stadium 3 (Parah)";
                                     badgeClass = "bg-dark";
                                 }
 
