@@ -549,7 +549,7 @@
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redirect ke halaman lain setelah tombol OK diklik
-                                window.location.href = '/';
+                                window.location.href = '/kuisioner';
                             }
                         });
                     },
