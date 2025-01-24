@@ -8,8 +8,8 @@
         <div class="card-body px-4 py-3">
           <div class="row align-items-center">
             <div class="col-9">
-              <h4 class="fw-semibold mb-8">Selamat Datang Di Aplikasi KBKUU</h4>
-              <div class="row gap-2 mt-2">
+              <h4 class="fw-semibold mb-8">Silahkan isi Biodata Anda!</h4>
+              {{-- <div class="row gap-2 mt-2">
                 <div class="col-md-5">
                   <button type="button" class="btn d-flex bg-primary-subtle w-100 d-block text-primary">
                     <span class="badge text-bg-primary me-2">1</span>MENDAPATKAN INFORMASI YANG TEPAT
@@ -25,7 +25,7 @@
                     <span class="badge text-bg-warning me-2">3</span>MENGATASI KELUHAN
                   </button>
                 </div>
-              </div>
+              </div> --}}
             </div>
             <div class="col-3">
               <div class="text-center mb-n5">

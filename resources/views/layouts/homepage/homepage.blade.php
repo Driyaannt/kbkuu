@@ -90,7 +90,7 @@ https://templatemo.com/tm-570-chain-app-dev
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="#services">Pelajari</a></li>
-              <li class="scroll-to-section"><a href="{{route('book-abpk')}}">Book</a></li>
+              {{-- <li class="scroll-to-section"><a href="{{route('book-abpk')}}">Book</a></li> --}}
               {{-- <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Mulai</a></div></li> --}}
               <li>
                 <div class="gradien-button text-center">

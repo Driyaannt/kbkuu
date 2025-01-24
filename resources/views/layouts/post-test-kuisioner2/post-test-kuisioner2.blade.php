@@ -534,7 +534,7 @@
             if (result.isConfirmed) {
                 // If user confirms, submit the form data using AJAX
                 $.ajax({
-                    url: '/save-post-test-kuisioner', // Ganti dengan URL route controller store
+                    url: '/save-post-test-kuisioner2', // Ganti dengan URL route controller store
                     type: 'POST',
                     data: finalData,
                     headers: {
@@ -549,7 +549,7 @@
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redirect ke halaman lain setelah tombol OK diklik
-                                window.location.href = '/kuisioner';
+                                window.location.href = '/kuisioner2';
                             }
                         });
                     },

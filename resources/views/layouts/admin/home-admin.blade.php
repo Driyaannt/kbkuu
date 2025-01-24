@@ -67,20 +67,46 @@
                 <div class="d-flex align-items-center">
                     <span class="flex-shrink-0"><box-icon name='receipt' type='solid'color='#ffccd5'></box-icon></span>
                     <div class="ms-4">
-                        <h4 class="card-title text-dark mt-2">Data (Pretest) Kuisioner</h4>
+                        <h4 class="card-title text-dark mt-2">Data (Pretest) Kuisioner 1</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-12 col-lg-12">
+    <div class="col-md-4 col-lg-4">
         <div class="card rounded-3 card-hover" id="cardDataTable3" data-target="dataTable3Wrapper" onclick="switchTable(this)">
             <a href="#" class="stretched-link"></a>
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <span class="flex-shrink-0"><box-icon name='file' type='solid' color='#ffccd5' ></box-icon></span>
                     <div class="ms-4">
-                        <h4 class="card-title text-dark mt-2">Data (Posttest) Kuisioner</h4>
+                        <h4 class="card-title text-dark mt-2">Data (Posttest) Kuisioner 1</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+        <div class="card rounded-3 card-hover" id="cardDataTable4" data-target="dataTable4Wrapper" onclick="switchTable(this)">
+            <a href="#" class="stretched-link"></a>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <span class="flex-shrink-0"><box-icon name='receipt' type='solid'color='#ffccd5'></box-icon></span>
+                    <div class="ms-4">
+                        <h4 class="card-title text-dark mt-2">Data (Pretest) Kuisioner 2</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <div class="card rounded-3 card-hover" id="cardDataTable5" data-target="dataTable5Wrapper" onclick="switchTable(this)">
+            <a href="#" class="stretched-link"></a>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <span class="flex-shrink-0"><box-icon name='file' type='solid' color='#ffccd5' ></box-icon></span>
+                    <div class="ms-4">
+                        <h4 class="card-title text-dark mt-2">Data (Posttest) Kuisioner 2</h4>
                     </div>
                 </div>
             </div>
@@ -205,6 +231,7 @@
                 </div>
 
                 <div class="table-responsive" id="dataTable2Wrapper" style="display: none;">
+                    <label class="mb-2">Data Pre-Test 1</label>
                     <table id="dataTable2" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
@@ -294,7 +321,7 @@
                 </div>
 
                 <div class="table-responsive" id="dataTable3Wrapper" style="display: none;">
-                    <label>Data Post</label>
+                    <label class="mb-2">Data Post-Test 1</label>
                     <table id="dataTable3" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
@@ -339,6 +366,185 @@
                         </thead>
                         <tbody>
                             @foreach($postTestKuisioners as $row)
+                            <tr>
+                                <td>{{ $row->id }}</td>
+                                <td>{{ $row->nama }}</td>
+                                <td>{{ $row->usia }}</td>
+                                <td>{{ $row->jenis_kelamin }}</td>
+                                <td>{{ $row->pendidikan }}</td>
+                                <td>{{ $row->pekerjaan }}</td>
+                                <td>{{ $row->jumlah_anak }}</td>
+                                <td>{{ $row->kb1 }}</td>
+                                <td>{{ $row->kb2 }}</td>
+                                <td>{{ $row->kb3 }}</td>
+                                <td>{{ $row->kb4 }}</td>
+                                <td>{{ $row->kb5 }}</td>
+                                <td>{{ $row->kb6 }}</td>
+                                <td>{{ $row->kb7 }}</td>
+                                <td>{{ $row->pengetahuan_percentage }}%</td>
+                                <td>{{ $row->pengetahuan_kategori }}</td>
+                                <td>{{ $row->q1 }}</td>
+                                <td>{{ $row->q2 }}</td>
+                                <td>{{ $row->q3 }}</td>
+                                <td>{{ $row->q4 }}</td>
+                                <td>{{ $row->q5 }}</td>
+                                <td>{{ $row->q6 }}</td>
+                                <td>{{ $row->sikap_percentage }}</td>
+                                <td>{{ $row->sikap_kategori }}</td>
+                                <td>{{ $row->action1 }}</td>
+                                <td>{{ $row->action2 }}</td>
+                                <td>{{ $row->action3 }}</td>
+                                <td>{{ $row->action4 }}</td>
+                                <td>{{ $row->action5 }}</td>
+                                <td>{{ $row->action6 }}</td>
+                                <td>{{ $row->action7 }}</td>
+                                <td>{{ $row->action8 }}</td>
+                                <td>{{ $row->action9 }}</td>
+                                <td>{{ $row->action10 }}</td>
+                                <td>{{ $row->tindakan_percentage }}%</td>
+                                <td>{{ $row->tindakan_kategori }}</td>
+                                <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-responsive" id="dataTable4Wrapper" style="display: none;">
+                    <label class="mb-2">Data Pre-Test 2</label>
+                    <table id="dataTable4" class="table table-hover table-striped table-bordered display nowrap w-100">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>Usia</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Pendidikan</th>
+                                <th>Pekerjaan</th>
+                                <th>Jumlah Anak</th>
+                                <th>Pengetahuan 1</th>
+                                <th>Pengetahuan 2</th>
+                                <th>Pengetahuan 3</th>
+                                <th>Pengetahuan 4</th>
+                                <th>Pengetahuan 5</th>
+                                <th>Pengetahuan 6</th>
+                                <th>Pengetahuan 7</th>
+                                <th>Pengetahuan (%)</th>
+                                <th>Pengetahuan Kategori</th>
+                                <th>Sikap 1</th>
+                                <th>Sikap 2</th>
+                                <th>Sikap 3</th>
+                                <th>Sikap 4</th>
+                                <th>Sikap 5</th>
+                                <th>Sikap 6</th>
+                                <th>Point Sikap</th>
+                                <th>Sikap Kategori</th>
+                                <th>Tindakan 1</th>
+                                <th>Tindakan 2</th>
+                                <th>Tindakan 3</th>
+                                <th>Tindakan 4</th>
+                                <th>Tindakan 5</th>
+                                <th>Tindakan 6</th>
+                                <th>Tindakan 7</th>
+                                <th>Tindakan 8</th>
+                                <th>Tindakan 9</th>
+                                <th>Tindakan 10</th>
+                                <th>Tindakan (%)</th>
+                                <th>Tindakan Kategori</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($kuisioners2 as $row)
+                            <tr>
+                                <td>{{ $row->id }}</td>
+                                <td>{{ $row->nama }}</td>
+                                <td>{{ $row->usia }}</td>
+                                <td>{{ $row->jenis_kelamin }}</td>
+                                <td>{{ $row->pendidikan }}</td>
+                                <td>{{ $row->pekerjaan }}</td>
+                                <td>{{ $row->jumlah_anak }}</td>
+                                <td>{{ $row->kb1 }}</td>
+                                <td>{{ $row->kb2 }}</td>
+                                <td>{{ $row->kb3 }}</td>
+                                <td>{{ $row->kb4 }}</td>
+                                <td>{{ $row->kb5 }}</td>
+                                <td>{{ $row->kb6 }}</td>
+                                <td>{{ $row->kb7 }}</td>
+                                <td>{{ $row->pengetahuan_percentage }}%</td>
+                                <td>{{ $row->pengetahuan_kategori }}</td>
+                                <td>{{ $row->q1 }}</td>
+                                <td>{{ $row->q2 }}</td>
+                                <td>{{ $row->q3 }}</td>
+                                <td>{{ $row->q4 }}</td>
+                                <td>{{ $row->q5 }}</td>
+                                <td>{{ $row->q6 }}</td>
+                                <td>{{ $row->sikap_percentage }}</td>
+                                <td>{{ $row->sikap_kategori }}</td>
+                                <td>{{ $row->action1 }}</td>
+                                <td>{{ $row->action2 }}</td>
+                                <td>{{ $row->action3 }}</td>
+                                <td>{{ $row->action4 }}</td>
+                                <td>{{ $row->action5 }}</td>
+                                <td>{{ $row->action6 }}</td>
+                                <td>{{ $row->action7 }}</td>
+                                <td>{{ $row->action8 }}</td>
+                                <td>{{ $row->action9 }}</td>
+                                <td>{{ $row->action10 }}</td>
+                                <td>{{ $row->tindakan_percentage }}%</td>
+                                <td>{{ $row->tindakan_kategori }}</td>
+                                <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive" id="dataTable5Wrapper" style="display: none;">
+                    <label class="mb-2">Data Post-Test 2</label>
+                    <table id="dataTable5" class="table table-hover table-striped table-bordered display nowrap w-100">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>Usia</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Pendidikan</th>
+                                <th>Pekerjaan</th>
+                                <th>Jumlah Anak</th>
+                                <th>Pengetahuan 1</th>
+                                <th>Pengetahuan 2</th>
+                                <th>Pengetahuan 3</th>
+                                <th>Pengetahuan 4</th>
+                                <th>Pengetahuan 5</th>
+                                <th>Pengetahuan 6</th>
+                                <th>Pengetahuan 7</th>
+                                <th>Pengetahuan (%)</th>
+                                <th>Pengetahuan Kategori</th>
+                                <th>Sikap 1</th>
+                                <th>Sikap 2</th>
+                                <th>Sikap 3</th>
+                                <th>Sikap 4</th>
+                                <th>Sikap 5</th>
+                                <th>Sikap 6</th>
+                                <th>Point Sikap</th>
+                                <th>Sikap Kategori</th>
+                                <th>Tindakan 1</th>
+                                <th>Tindakan 2</th>
+                                <th>Tindakan 3</th>
+                                <th>Tindakan 4</th>
+                                <th>Tindakan 5</th>
+                                <th>Tindakan 6</th>
+                                <th>Tindakan 7</th>
+                                <th>Tindakan 8</th>
+                                <th>Tindakan 9</th>
+                                <th>Tindakan 10</th>
+                                <th>Tindakan (%)</th>
+                                <th>Tindakan Kategori</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($postTestKuisioners2 as $row)
                             <tr>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->nama }}</td>
@@ -512,6 +718,40 @@
         });
 
         $('#dataTable3').DataTable({
+            dom: '<"d-flex justify-content-between"lfB>rtip',
+            buttons: [
+                { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+                { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+                { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+                { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+                { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+            ],
+            scrollX: true,
+            scrollY: '400px',
+            responsive: true,
+            paging: true,
+            searching: true,
+            info: true
+        });
+
+        $('#dataTable4').DataTable({
+            dom: '<"d-flex justify-content-between"lfB>rtip',
+            buttons: [
+                { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },
+                { extend: 'csv', className: 'btn btn-success btn-sm', text: '<i class="fas fa-file-csv me-1"></i> CSV' },
+                { extend: 'excel', className: 'btn btn-warning btn-sm', text: '<i class="fas fa-file-excel me-1"></i> Excel' },
+                { extend: 'pdf', className: 'btn btn-danger btn-sm', text: '<i class="fas fa-file-pdf me-1"></i> PDF' },
+                { extend: 'print', className: 'btn btn-info btn-sm', text: '<i class="fas fa-print me-1"></i> Print' }
+            ],
+            scrollX: true,
+            scrollY: '400px',
+            responsive: true,
+            paging: true,
+            searching: true,
+            info: true
+        });
+
+        $('#dataTable5').DataTable({
             dom: '<"d-flex justify-content-between"lfB>rtip',
             buttons: [
                 { extend: 'copy', className: 'btn btn-primary btn-sm', text: '<i class="fas fa-copy me-1"></i> Copy' },

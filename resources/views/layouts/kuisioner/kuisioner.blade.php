@@ -39,10 +39,10 @@
         <div class="col-md-6">
           <div class="mb-3">
             <label>Jenis Kelamin</label>
-            <div class="form-check">
+            {{-- <div class="form-check">
               <input type="radio" name="jenis_kelamin" id="male" value="Laki-laki" class="form-check-input" />
               <label for="male" class="form-check-label">Laki-laki</label>
-            </div>
+            </div> --}}
             <div class="form-check">
               <input type="radio" name="jenis_kelamin" id="female" value="Perempuan" class="form-check-input" />
               <label for="female" class="form-check-label">Perempuan</label>

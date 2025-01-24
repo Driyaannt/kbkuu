@@ -7,15 +7,15 @@
     <div class="card-body px-4 py-3">
         <div class="row align-items-center">
             <div class="col-lg-9 col-12">
-                <h4 class="fw-semibold mb-3">Book ABPK</h4>
+                <h4 class="fw-semibold mb-3">Book KBKUU</h4>
                 <p class="text-muted mb-2">
-                    Buku ini berisi materi-materi yang berkaitan dengan ABPK.
+                    Buku ini berisi materi-materi yang berkaitan dengan KBKUU.
                 </p>
                 <div class="d-flex gap-2 mt-3 flex-wrap">
                     <a href="https://kbkuu.my-skripsi.my.id/file/book-abpk.pdf" class="btn btn-secondary btn-md" target="_blank" rel="noopener noreferrer">
                         <i class="bi bi-eye"></i> Lihat Buku
                     </a>
-                    <a href="{{ route('post-test-kuisioner') }}" class="btn btn-secondary btn-md">
+                    <a href="{{ route('post-test-kuisioner2') }}" class="btn btn-secondary btn-md">
                         Isi Post-Test Anda
                     </a>
                 </div>

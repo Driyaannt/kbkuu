@@ -122,12 +122,12 @@
                     data-bs-toggle="modal"
                     data-bs-target="#vertical-center-modal"
                     >
-                    Open BMI
+                    Check IMT
                     </button>
                 </div>
 
                 <div class="col-md-5 col-lg-5 card-hover" id="card3">
-                    <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="openHivModal()">
+                    <div class="card card-style card-riwayat rounded-3 h-70 mt-2 form-control required card-container animate__animated animate__fadeInDown" onclick="toggleSelect(this, 'RIWAYAT PENYAKIT IMS DAN HIV')">
                         <a href="#" class="stretched-link"></a>
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -693,10 +693,25 @@
                 <ul>
                     <li><strong>Dikatakan HIV/IMS jika:</strong></li>
                     <li>1) Ada diagnose dari dokter.</li>
-                    <li>2) PERHATIAN !!! bagi yang sering berganti pasangan saat berhubungan, memakai tato, sering memakai jarum suntik bergantian.</li>
+                    <li>2) <strong>PERHATIAN !!!</strong> bagi yang sering berganti pasangan saat berhubungan, memakai tato, sering memakai jarum suntik bergantian.</li>
                     <li>3) Mengonsumsi obat resep dari dokter ARV.</li>
                     <li><strong>Jika belum tahu dan belum periksa,</strong> silakan datang ke fasilitas kesehatan terdekat jika Anda sering berganti pasangan.</li>
                 </ul>
+                <hr>
+                <h6>Pilih Hasil HIV:</h6>
+                <div class="card mb-3" id="cardNonReaktif" onclick="selectCard('non-reaktif')">
+                    <div class="card-body">
+                        <h5 class="card-title">Non-Reaktif</h5>
+                        <p class="card-text">Tidak ada antibodi atau antigen HIV yang terdeteksi.</p>
+                    </div>
+                </div>
+                <div class="card mb-3" id="cardReaktif" onclick="selectCard('reaktif')">
+                    <div class="card-body">
+                        <h5 class="card-title">Reaktif</h5>
+                        <p class="card-text">Terdeteksi antibodi atau antigen HIV dalam sampel darah.</p>
+                    </div>
+                </div>
+                <div id="resultBadge" class="mt-3" style="display: none;"></div>
             </div>
         </div>
     </div>
@@ -858,6 +873,30 @@
                           </div>
                         </div>
                       </div>
+
+                      <script>
+                        function selectCard(status) {
+                            // Menghapus tanda "selected" dari semua kartu
+                            document.getElementById('cardNonReaktif').classList.remove('border-primary', 'bg-secondary');
+                            document.getElementById('cardReaktif').classList.remove('border-primary', 'bg-secondary');
+
+                            // Menambahkan tanda "selected" pada kartu yang dipilih
+                            const selectedCard = status === 'non-reaktif' ? 'cardNonReaktif' : 'cardReaktif';
+                            document.getElementById(selectedCard).classList.add('border-primary', 'bg-secondary');
+
+                            // Menampilkan hasil sesuai pilihan
+                            const resultBadge = document.getElementById('resultBadge');
+                            if (status === 'non-reaktif') {
+                                resultBadge.style.display = 'block';
+                                resultBadge.className = 'badge bg-success text-white';
+                                resultBadge.textContent = 'Anda NEGATIF HIV';
+                            } else if (status === 'reaktif') {
+                                resultBadge.style.display = 'block';
+                                resultBadge.className = 'badge bg-danger text-white';
+                                resultBadge.textContent = 'Anda POSITIF HIV';
+                            }
+                        }
+                    </script>
 
 
                       <script>
@@ -1065,45 +1104,59 @@
                      {{-- hipertensi --}}
                      <script>
                         document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
-                            e.preventDefault();
-                            const tekananDarah = document.getElementById('tekananDarah').value;
-                            const statusDarahField = document.getElementById('statusDarah');
-                            const badge = document.getElementById('hipertensi-badge');
+                          e.preventDefault();
+                          const tekananDarah = document.getElementById('tekananDarah').value;
+                          const statusDarahField = document.getElementById('statusDarah');
+                          const badge = document.getElementById('hipertensi-badge');
 
-                            const regex = /^(\d{1,3})\/(\d{1,3})$/;
-                            const match = tekananDarah.match(regex);
+                          const regex = /^(\d{1,3})\/(\d{1,3})$/;
+                          const match = tekananDarah.match(regex);
 
-                            if (match) {
-                                const sistolik = parseInt(match[1]);
-                                const diastolik = parseInt(match[2]);
+                          if (match) {
+                              const sistolik = parseInt(match[1]);
+                              const diastolik = parseInt(match[2]);
 
-                                let status = "";
-                                let badgeClass = "";
+                              let status = "";
+                              let badgeClass = "";
 
-                                // Menentukan status berdasarkan kategori tekanan darah
-                                if (sistolik < 90 || diastolik < 60) {
-                                    status = "Hipotensi";
-                                    badgeClass = "bg-info";
-                                }else if(sistolik < 121 || diastolik < 81){
-                                    status = "Normal";
-                                    badgeClass = "bg-success";
-                                    } else if (sistolik < 140 || diastolik < 90) {
-                                        status = "Prehipertensi";
-                                        badgeClass = "bg-warning";
-                                    } else {
-                                        status = "Hipertensi";
-                                        badgeClass = "bg-danger";
-                                    }
+                              // Validasi input
+                              if (isNaN(sistolik) || isNaN(diastolik) || sistolik <= 60 || diastolik <= 40) {
+                                  status = "Silakan masukkan angka yang valid dan masuk akal";
+                                  badgeClass = "bg-secondary";
+                              } else {
+                                  // Klasifikasi Tekanan Darah berdasarkan SEADOC
+                                  if (sistolik >= 180 || diastolik >= 120) {
+                                      status = "Hipertensi Krisis";
+                                      badgeClass = "bg-danger";
+                                  } else if (sistolik >= 160 || diastolik >= 100) {
+                                      status = "Hipertensi Tingkat 2";
+                                      badgeClass = "bg-danger";
+                                  } else if (sistolik >= 140 || diastolik >= 90) {
+                                      status = "Hipertensi Tingkat 1";
+                                      badgeClass = "bg-warning";
+                                  } else if (sistolik >= 120 || diastolik >= 80) {
+                                      status = "Normal Tinggi (Prahipertensi)";
+                                      badgeClass = "bg-warning";
+                                  } else if (sistolik >= 90 && sistolik < 120 && diastolik >= 60 && diastolik < 80) {
+                                      status = "Normal";
+                                      badgeClass = "bg-success";
+                                  } else {
+                                      status = "Hipotensi";
+                                      badgeClass = "bg-info";
+                                  }
+                              }
 
-                                // Memperbarui field status dan badge
-                                statusDarahField.value = status;
-                                badge.textContent = status;
-                                badge.className = `badge mt-1 ${badgeClass}`;
+                              console.log("Sistolik:", sistolik, "Diastolik:", diastolik, "Status:", status);
 
-                            } else {
-                                alert('Format tekanan darah tidak valid. Gunakan format 190/90.');
-                            }
-                        });
+                              // Memperbarui field status dan badge
+                              statusDarahField.value = status;
+                              badge.textContent = status;
+                              badge.className = `badge mt-1 ${badgeClass}`;
+                          } else {
+                              alert('Format tekanan darah tidak valid. Gunakan format 120/80.');
+                          }
+                      });
+
                     </script>
 
 <script>

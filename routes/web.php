@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MetodeKBController;
 use App\Http\Controllers\KuisionerController;
+use App\Http\Controllers\KuisionerController2;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 
@@ -26,13 +27,26 @@ Route::get('/kuisioner', function () {
     return view('layouts.kuisioner.kuisioner');
 })->name('kuisioner');
 
+Route::get('/kuisioner2', function () {
+    return view('layouts.kuisioner2.kuisioner2');
+})->name('kuisioner2');
+
+
 Route::get('/post-test-kuisioner', function () {
     return view('layouts.post-test-kuisioner.post-test-kuisioner');
 })->name('post-test-kuisioner');
 
+Route::get('/post-test-kuisioner2', function () {
+    return view('layouts.post-test-kuisioner2.post-test-kuisioner2');
+})->name('post-test-kuisioner2');
+
 Route::post('/save-post-test-kuisioner', [KuisionerController::class, 'PostTestStore'])->name('save-post-test-kuisioner');
+Route::post('/save-post-test-kuisioner2', [KuisionerController2::class, 'PostTestStore'])->name('save-post-test-kuisioner2');
+
 
 Route::post('/save-kuisioner', [KuisionerController::class, 'store'])->name('save-kuisioner');
+Route::post('/save-kuisioner2', [KuisionerController2::class, 'store'])->name('save-kuisioner2');
+
 
 Route::post('/save-form-data', [HomeController::class, 'saveFormData'])->name('save-form-data');
 Route::post('/section-card', [HomeController::class, 'sectionCard'])->name('section-card');
@@ -81,7 +95,7 @@ Route::get('/check-session', function () {
 });
 
 // router pdf
-Route::get('/book-abpk', function () {
+Route::get('/book-kbkuu', function () {
     return view('layouts.book-abpk.book-abpk');
 })->name('book-abpk');
 

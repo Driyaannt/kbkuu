@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Kuisioner;
+use App\Models\Kuisioner2;
 use App\Models\PostTestKuisioner;
+use App\Models\PostTestKuisioner2;
 
 class AdminController extends Controller
 {
@@ -83,6 +85,9 @@ class AdminController extends Controller
         $kuisioners = Kuisioner::all();
         $postTestKuisioners = PostTestKuisioner::all();
 
+        $kuisioners2 = Kuisioner2::all();
+        $postTestKuisioners2 = PostTestKuisioner2::all();
+
 
 
         // chart
@@ -107,6 +112,8 @@ class AdminController extends Controller
         return view('layouts.admin.home-admin', [
             'results' => $results,
             'kuisioners' => $kuisioners,
+            'kuisioners2' => $kuisioners2,
+            'postTestKuisioners2' => $postTestKuisioners2,
             'postTestKuisioners' => $postTestKuisioners,
 
             // chart
