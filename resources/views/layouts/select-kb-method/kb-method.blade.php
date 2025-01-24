@@ -181,8 +181,11 @@
                                 </div>
                             </div>
                         </div>
+                        <span>Status Anda :</span>
+                        <div id="ims-badge" class="badge mt-1">Belum dipilih</div>
                     </div>
                 </div>
+
 
                 <!-- Tombol untuk Membuka Modal (Tombol ini bisa dihapus karena card akan membuka modal langsung) -->
                 <div class="col-md-1 col-lg-1 mb-3">
@@ -203,12 +206,12 @@
                                     <h6 class="card-title text-dark mb-0 text-truncate" style="max-width: 200px;">RIWAYAT PENYAKIT JANTUNG, DIABETES, ASMA</h6>
                                 </div>
                             </div>
-                            <div id="diabetes-badge" class="badge mt-1"></div>
+                            <span>Status Gula Anda :</span>
+                          <div id="gula-badge" class="badge mt-1"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tombol untuk Membuka Modal -->
                 <!-- Tombol untuk Membuka Modal -->
                 <div class="col-md-1 col-lg-1 mb-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vertical-center-modal-diabetes">
@@ -990,40 +993,52 @@
                 <h5 class="modal-title" id="vertical-center-modal-diabetesLabel">Masukkan Gula Darah atau Hemoglobin</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form id="diabetes-form">
-                    <div class="mb-3">
-                        <label for="gulaDarah" class="form-label">Kadar Gula Darah (mg/dL)</label>
-                        <input type="text" class="form-control" id="gulaDarah" placeholder="Masukkan kadar gula darah (misalnya: 200)">
-                    </div>
-                    <div class="mb-3">
-                        <label for="statusGula" class="form-label">Status Gula Darah</label>
-                        <span id="diabetes-badge" class="badge mt-1">Status</span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                <div class="modal-body">
+                    <form id="gulaDarah-form">
+                        <!-- Input kadar gula darah -->
+                        <div class="mb-3">
+                            <label for="gulaDarah" class="form-label">Kadar Gula Darah (mg/dL)</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="gulaDarah"
+                                placeholder="Masukkan kadar gula darah (misalnya: 200)">
+                        </div>
+                        <!-- Output status gula darah -->
+                        <div class="mb-3">
+                            <label for="statusGula" class="form-label">Status Gula Darah</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="statusGula"
+                                placeholder="Normal / Tinggi / Rendah"
+                                readonly>
+                        </div>
+                        <!-- Tombol Submit -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
-                <!-- Keterangan -->
-                <div class="mt-3">
-                    <h6>Keterangan:</h6>
-                    <ul>
-                        <li><strong>Gula Darah Tinggi:</strong> Dikatakan gula darah tinggi jika:</li>
-                        <li>1) Hasil laboratorium cek darah pada kadar gula setelah makan >200 mg/dL.</li>
-                        <li>2) Ada bawaan dari keluarga.</li>
-                        <li>3) Mengonsumsi obat gula darah tinggi resep dari dokter seperti glibet, metformin, insulin.</li>
-                        <li><strong>Normal gula darah:</strong> <140 mg/dL.</li>
-                        <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
-                    </ul>
-                    {{-- <h6>Kurang Darah (Anemia):</h6>
-                    <ul>
-                        <li><strong>Dikatakan kurang darah jika:</strong></li>
-                        <li>1) Hasil laboratorium cek darah pada hemoglobin (HB) <12 g/dL.</li>
-                        <li>2) Mengonsumsi obat penambah darah seperti FE setiap hari.</li>
-                        <li><strong>Normal HB:</strong> 12-16 g/dL.</li>
-                        <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
-                    </ul> --}}
+                    <!-- Keterangan -->
+                    <div class="mt-3">
+                        <h6>Keterangan:</h6>
+                        <ul>
+                            <li><strong>Gula Darah Tinggi:</strong> Dikatakan gula darah tinggi jika:</li>
+                            <li>1) Hasil laboratorium cek darah pada kadar gula setelah makan >200 mg/dL.</li>
+                            <li>2) Ada bawaan dari keluarga.</li>
+                            <li>3) Mengonsumsi obat gula darah tinggi resep dari dokter seperti glibet, metformin, insulin.</li>
+                            <li><strong>Normal gula darah:</strong> <140 mg/dL.</li>
+                            <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
+                        </ul>
+                        {{-- <h6>Kurang Darah (Anemia):</h6>
+                        <ul>
+                            <li><strong>Dikatakan kurang darah jika:</strong></li>
+                            <li>1) Hasil laboratorium cek darah pada hemoglobin (HB) <12 g/dL.</li>
+                            <li>2) Mengonsumsi obat penambah darah seperti FE setiap hari.</li>
+                            <li><strong>Normal HB:</strong> 12-16 g/dL.</li>
+                            <li>Jika belum tahu dan belum pernah periksa, silakan datang ke fasilitas kesehatan terdekat.</li>
+                        </ul> --}}
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>
@@ -1142,26 +1157,36 @@
 
                       <script>
                         function selectCard(status) {
-                            // Menghapus tanda "selected" dari semua kartu
-                            document.getElementById('cardNonReaktif').classList.remove('border-primary', 'bg-secondary');
-                            document.getElementById('cardReaktif').classList.remove('border-primary', 'bg-secondary');
+                        // Menghapus tanda "selected" dari semua kartu
+                        document.getElementById('cardNonReaktif').classList.remove('border-primary', 'bg-secondary');
+                        document.getElementById('cardReaktif').classList.remove('border-primary', 'bg-secondary');
 
-                            // Menambahkan tanda "selected" pada kartu yang dipilih
-                            const selectedCard = status === 'non-reaktif' ? 'cardNonReaktif' : 'cardReaktif';
-                            document.getElementById(selectedCard).classList.add('border-primary', 'bg-secondary');
+                        // Menambahkan tanda "selected" pada kartu yang dipilih
+                        const selectedCard = status === 'non-reaktif' ? 'cardNonReaktif' : 'cardReaktif';
+                        document.getElementById(selectedCard).classList.add('border-primary', 'bg-secondary');
 
-                            // Menampilkan hasil sesuai pilihan
-                            const resultBadge = document.getElementById('resultBadge');
-                            if (status === 'non-reaktif') {
-                                resultBadge.style.display = 'block';
-                                resultBadge.className = 'badge bg-success text-white';
-                                resultBadge.textContent = 'Anda NEGATIF HIV';
-                            } else if (status === 'reaktif') {
-                                resultBadge.style.display = 'block';
-                                resultBadge.className = 'badge bg-danger text-white';
-                                resultBadge.textContent = 'Anda POSITIF HIV';
-                            }
+                        // Menampilkan hasil sesuai pilihan
+                        const resultBadge = document.getElementById('resultBadge');
+                        const badgeIms = document.getElementById('ims-badge'); // Mengakses ims-badge
+
+                        if (status === 'non-reaktif') {
+                            resultBadge.style.display = 'block';
+                            resultBadge.className = 'badge bg-success text-white';
+                            resultBadge.textContent = 'Anda NEGATIF HIV';
+
+                            // Update badgeIms
+                            badgeIms.className = 'badge bg-success text-white';
+                            badgeIms.textContent = 'Status Anda: NEGATIF HIV';
+                        } else if (status === 'reaktif') {
+                            resultBadge.style.display = 'block';
+                            resultBadge.className = 'badge bg-danger text-white';
+                            resultBadge.textContent = 'Anda POSITIF HIV';
+
+                            // Update badgeIms
+                            badgeIms.className = 'badge bg-danger text-white';
+                            badgeIms.textContent = 'Status Anda: POSITIF HIV';
                         }
+                    }
                     </script>
 
 
@@ -1329,47 +1354,48 @@
 
                     {{-- gula darah --}}
                     <script>
-                       // Fungsi untuk menilai status gula darah dan anemia, serta memperbarui badge
-                        document.getElementById('diabetes-form').addEventListener('submit', function (e) {
+                        document.getElementById('gulaDarah-form').addEventListener('submit', function (e) {
                             e.preventDefault();
-                            const gulaDarah = document.getElementById('gulaDarah').value;
-                            const badge = document.getElementById('diabetes-badge'); // Mendapatkan elemen badge
 
-                            // Validasi input untuk format gula darah (misalnya 200)
-                            const regex = /^(\d+)$/;
+                            const gulaDarah = document.getElementById('gulaDarah').value; // Input gula darah
+                            const statusGulaField = document.getElementById('statusGula'); // Input readonly untuk status gula darah
+                            const gulaBadge = document.getElementById('gula-badge'); // Badge pada card untuk menampilkan status
+
+                            // Validasi input gula darah (angka atau desimal)
+                            const regex = /^(\d+(\.\d+)?)$/;
                             const match = gulaDarah.match(regex);
 
                             if (match) {
-                                const gula = parseInt(match[1]); // Mengambil nilai gula darah
+                                const gula = parseFloat(match[1]); // Parsing nilai gula darah
 
-                                // Menilai status gula darah
                                 let status = "";
                                 let badgeClass = "";
 
-                                if (gula > 200) {
+                                if (gula >= 200) {
                                     status = "Tinggi";
-                                    badgeClass = "bg-danger"; // Warna untuk gula darah tinggi
+                                    badgeClass = "bg-danger"; // Warna merah
                                 } else if (gula < 140) {
                                     status = "Normal";
-                                    badgeClass = "bg-success"; // Warna untuk gula darah normal
-                                } else {
+                                    badgeClass = "bg-success"; // Warna hijau
+                                }else if (gula < 70) {
                                     status = "Rendah";
-                                    badgeClass = "bg-warning"; // Warna untuk gula darah rendah
+                                    badgeClass = "bg-warning";
                                 }
 
-                                // Memperbarui badge dengan status
-                                badge.textContent = status; // Menampilkan status pada badge
-                                badge.className = `badge mt-1 ${badgeClass}`; // Menambahkan kelas untuk warna badge
 
+
+                                // Memperbarui input readonly dan badge dengan status
+                                statusGulaField.value = status; // Menampilkan status di input readonly
+                                gulaBadge.textContent = status; // Menampilkan status di badge
+                                gulaBadge.className = `badge mt-1 ${badgeClass}`; // Menambahkan warna sesuai status
                             } else {
                                 alert('Format kadar gula darah tidak valid. Gunakan format angka (misalnya: 200).');
                             }
                         });
-
                     </script>
-                    {{-- hipertensi --}}
+
                     <script>
-                      document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
+                        document.getElementById('hipertensi-form').addEventListener('submit', function (e) {
                         e.preventDefault();
                         const tekananDarah = document.getElementById('tekananDarah').value;
                         const statusDarahField = document.getElementById('statusDarah');
