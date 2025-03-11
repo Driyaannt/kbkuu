@@ -123,4 +123,36 @@ class AdminController extends Controller
             'recommendedDataByYear' => $recommendedDataByYear
         ]);
     }
+
+    public function deletekuisioners($id)
+    {
+        // Hapus data berdasarkan ID
+        Kuisioner::destroy($id);
+        // Redirect kembali ke halaman admin
+        return redirect()->route('admin');
+    }
+
+    public function deletekuisioners2($id)
+    {
+        // Hapus data berdasarkan ID
+        Kuisioner2::destroy($id);
+        // Redirect kembali ke halaman admin
+        return redirect()->route('admin');
+    }
+
+    public function deleteposttestkuisioners($id)
+    {
+        // Hapus data berdasarkan ID
+        PostTestKuisioner::destroy($id);
+        // Redirect kembali ke halaman admin
+        return redirect()->route('admin');
+    }
+
+    public function deleteposttestkuisioners2($id)
+    {
+        // Hapus data berdasarkan ID
+        PostTestKuisioner2::destroy($id);
+        // Redirect kembali ke halaman admin
+        return redirect()->route('admin');
+    }
 }

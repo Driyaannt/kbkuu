@@ -235,6 +235,7 @@
                     <table id="dataTable2" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
+                                <th>Delete</th>
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Usia</th>
@@ -277,6 +278,13 @@
                         <tbody>
                             @foreach($kuisioners as $row)
                             <tr>
+                                <td>
+                                    <form action="{{ route('delete.kuisioners', $row->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
+                                </td>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->nama }}</td>
                                 <td>{{ $row->usia }}</td>
@@ -325,6 +333,7 @@
                     <table id="dataTable3" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
+                                <th>Delete</th>
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Usia</th>
@@ -367,6 +376,13 @@
                         <tbody>
                             @foreach($postTestKuisioners as $row)
                             <tr>
+                                <td>
+                                    <form action="{{ route('delete.post-test-kuisioners', $row->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
+                                </td>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->nama }}</td>
                                 <td>{{ $row->usia }}</td>
@@ -415,6 +431,7 @@
                     <table id="dataTable4" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
+                                <th>Delete</th>
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Usia</th>
@@ -457,6 +474,13 @@
                         <tbody>
                             @foreach($kuisioners2 as $row)
                             <tr>
+                                <td>
+                                    <form action="{{ route('delete.kuisioners2', $row->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
+                                </td>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->nama }}</td>
                                 <td>{{ $row->usia }}</td>
@@ -504,6 +528,7 @@
                     <table id="dataTable5" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
+                                <th>Delete</th>
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Usia</th>
@@ -546,6 +571,13 @@
                         <tbody>
                             @foreach($postTestKuisioners2 as $row)
                             <tr>
+                                <td>
+                                    <form action="{{ route('delete.post-test-kuisioners2', $row->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
+                                </td>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->nama }}</td>
                                 <td>{{ $row->usia }}</td>

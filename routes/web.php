@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 
 
+
 // route home
 Route::get('/homepage', function () {
     if(session()->has('data_diri') || session()->has('select_menu')) {
@@ -106,3 +107,7 @@ Route::get('/admin', function () {
 })->name('admin');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::delete('/admin/delete/{id}', [AdminController::class, 'deletekuisioners'])->name('delete.kuisioners');
+Route::delete('/admin/delete2/{id}', [AdminController::class, 'deletekuisioners2'])->name('delete.kuisioners2');
+Route::delete('/admin/delete3/{id}', [AdminController::class, 'deleteposttestkuisioners'])->name('delete.post-test-kuisioners');
+Route::delete('/admin/delete4/{id}', [AdminController::class, 'deleteposttestkuisioners2'])->name('delete.post-test-kuisioners2');
