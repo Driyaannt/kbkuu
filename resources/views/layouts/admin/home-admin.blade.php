@@ -193,6 +193,7 @@
                     <table id="dataTable1" class="table table-hover table-striped table-bordered display nowrap w-100">
                         <thead class="table-light">
                             <tr>
+                                <th>Delete</th>
                                 <th>ID</th>
                                 <th>Nama Akseptor</th>
                                 <th>Nama Suami</th>
@@ -211,6 +212,13 @@
                         <tbody>
                             @foreach($results as $row)
                             <tr>
+                                <td>
+                                    <form action="{{ route('delete.result', $row->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
+                                </td>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->nama_akseptor }}</td>
                                 <td>{{ $row->nama_suami }}</td>
@@ -224,6 +232,7 @@
                                 <td>{{ $row->medical_history }}</td>
                                 <td>{{ $row->recommended_methods }}</td>
                                 <td>{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</td>
+
                             </tr>
                             @endforeach
                         </tbody>

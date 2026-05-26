@@ -80,7 +80,7 @@ https://templatemo.com/tm-570-chain-app-dev
       </div>
     </div>
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center align-items-center" style="min-height: 50vh;">
         <!-- Card 1 -->
         <div class="col-lg-4 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
           <div class="service-item first-service">

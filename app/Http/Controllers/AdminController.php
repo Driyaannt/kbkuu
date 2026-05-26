@@ -155,4 +155,11 @@ class AdminController extends Controller
         // Redirect kembali ke halaman admin
         return redirect()->route('admin');
     }
+
+    public function deleteresult($id){
+        // Hapus data berdasarkan ID
+        DB::table('result_method_k_b_s')->where('id', $id)->delete();
+        // Redirect kembali ke halaman admin
+        return redirect()->route('admin');
+    }
 }

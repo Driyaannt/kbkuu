@@ -28,7 +28,8 @@
 </div>
 
 <div class="container mt-4 mb-4">
-    <a href="https://85f00861-trial.flowpaper.com/KBKUpdf1/#PreviewMode=Miniature" class="fp-embed" data-fp-width="100%" data-fp-height="400px" style="display: block; max-width: 100%;"></a>
+    {{-- <a href="https://85f00861-trial.flowpaper.com/KBKUpdf1/#PreviewMode=Miniature" class="fp-embed" data-fp-width="100%" data-fp-height="400px" style="display: block; max-width: 100%;"></a> --}}
+    <a href="https://8e68089c-trial.flowpaper.com/KBKUpdf/#PreviewMode=Miniature" class="fp-embed" data-fp-width="100%" data-fp-height="400px" style="display: block; max-width: 100%;"></a>
 </div>
 
 <script async defer src="https://cdn-online.flowpaper.com/zine/3.8.5/js/embed.min.js"></script>

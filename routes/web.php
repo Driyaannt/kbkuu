@@ -107,6 +107,7 @@ Route::get('/admin', function () {
 })->name('admin');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::delete('/admin/result/{id}', [AdminController::class, 'deleteresult'])->name('delete.result');
 Route::delete('/admin/delete/{id}', [AdminController::class, 'deletekuisioners'])->name('delete.kuisioners');
 Route::delete('/admin/delete2/{id}', [AdminController::class, 'deletekuisioners2'])->name('delete.kuisioners2');
 Route::delete('/admin/delete3/{id}', [AdminController::class, 'deleteposttestkuisioners'])->name('delete.post-test-kuisioners');
