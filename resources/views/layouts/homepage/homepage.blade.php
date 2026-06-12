@@ -2,364 +2,562 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBkuu - Keluarga Berencana</title>
 
-    <title>KBkuu</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('custom/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!--
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-TemplateMo 570 Chain App Dev
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-https://templatemo.com/tm-570-chain-app-dev
-
--->
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('custom/assets/css/templatemo-chain-app-dev.css') }}">
-    <link rel="stylesheet" href="{{asset('custom/assets/css/animated.css')}}">
-    <link rel="stylesheet" href="{{asset('custom/assets/css/owl.css')}}">
     <style>
-       .custom-gradient-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background: linear-gradient(to right, #00b4d8, #0077b6); /* Gradient background */
-        color: white;
-        font-size: 16px;
-        text-decoration: none;
-        border-radius: 5px;
-        text-align: center;
-        transition: background 0.3s ease;
-        border-radius: 30px !important;
+        * {
+            font-family: 'Poppins', sans-serif;
         }
-        .gradien-button{
-            z-index: 10;
+
+        :root {
+            --primary: #FF6B9D;
+            --primary-dark: #E91E63;
+            --secondary: #00BCD4;
+            --accent: #FF4081;
+            --dark: #2D3436;
+            --light: #FFF0F5;
+        }
+
+        body {
+            background-color: #FAFAFA;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+
+        .navbar-brand i {
+            color: #FFD700;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #FFD700 !important;
+            transform: translateY(-2px);
+        }
+
+        .btn-nav {
+            background: white;
+            color: var(--primary) !important;
+            border-radius: 25px;
+            padding: 8px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            background: #FFD700;
+            color: var(--dark) !important;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 50%, #FFD6E7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .custom-gradient-button:hover {
-        background: linear-gradient(to right, #0077b6, #00b4d8); /* Hover effect for the gradient */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            animation: pulse 3s ease-in-out infinite;
         }
-        .service-image {
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #636E72;
+            margin: 20px 0 30px;
+            line-height: 1.8;
+        }
+
+        .btn-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
+            color: white;
+        }
+
+        .hero-image {
             max-width: 100%;
-            max-height: 250px; /* Sesuaikan dengan kebutuhan */
-            object-fit: cover; /* Agar proporsi gambar tetap terjaga */
+            animation: float 3s ease-in-out infinite;
         }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            color: #636E72;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* Cards */
+        .kb-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            height: 100%;
+            border: none;
+        }
+
+        .kb-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.2);
+        }
+
+        .kb-card-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .kb-card-body {
+            padding: 25px;
+        }
+
+        .kb-card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .kb-card-text {
+            color: #636E72;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .kb-card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            background: white;
+            color: var(--primary);
+            border-radius: 30px;
+            padding: 15px 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            background: #FFD700;
+            color: var(--dark);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Feature Icons */
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-section {
+                padding-top: 100px;
+                min-height: auto;
+            }
+        }
     </style>
-  </head>
+</head>
 
 <body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="{{route('usage-category')}}" class="logo">
-              <img src="{{ asset('assets/icons/Kbkuu.png') }}" alt="Chain App Dev" style="width: 200px !important;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{route('homepage')}}">
+                <i class="bi bi-heart-pulse-fill me-2"></i>KBKUU
             </a>
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#services">Pelajari</a></li>
-              {{-- <li class="scroll-to-section"><a href="{{route('book-abpk')}}">Book</a></li> --}}
-              {{-- <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Mulai</a></div></li> --}}
-              <li>
-                <div class="gradien-button text-center">
-                    <a href="{{route('usage-category')}}" class="custom-gradient-button">
-                      <i class="fa fa-sign-in-alt"></i> Mulai
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pelajari">Pelajari</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-nav ms-3" href="{{route('usage-category')}}">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>Mulai
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="hero-title">
+                        KBKUU: <span>Partner Kesehatan Keluarga</span> Terpercaya Anda
+                    </h1>
+                    <p class="hero-subtitle">
+                        Aplikasi inovatif untuk mendukung kesehatan keluarga Anda. Dirancang dengan antarmuka sederhana dan fitur lengkap untuk mempermudah pengelolaan kesehatan kontrasepsi.
+                    </p>
+                    <a href="{{route('usage-category')}}" class="btn btn-hero">
+                        <i class="bi bi-arrow-right-circle me-2"></i>Mulai Sekarang
                     </a>
                 </div>
-            </li>
-            </ul>
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-
-  <div id="modal" class="popupContainer" style="display:none;">
-    <div class="popupHeader">
-        <span class="header_title">Login</span>
-        <span class="modal_close"><i class="fa fa-times"></i></span>
-    </div>
-
-    <section class="popupBody">
-        <!-- Social Login -->
-        <div class="social_login">
-            <div class="">
-                <a href="#" class="social_box fb">
-                    <span class="icon"><i class="fab fa-facebook"></i></span>
-                    <span class="icon_title">Connect with Facebook</span>
-
-                </a>
-
-                <a href="#" class="social_box google">
-                    <span class="icon"><i class="fab fa-google-plus"></i></span>
-                    <span class="icon_title">Connect with Google</span>
-                </a>
+                <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="{{ asset('assets/images/bidan.png') }}" alt="KB Illustration" class="hero-image">
+                </div>
             </div>
-
-            <div class="centeredText">
-                <span>Or use your Email address</span>
-            </div>
-
-            <div class="action_btns">
-                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
-            </div>
-        </div>
-
-        <!-- Username & Password Login form -->
-        <div class="user_login">
-            <form>
-                <label>Email / Username</label>
-                <input type="text" />
-                <br />
-
-                <label>Password</label>
-                <input type="password" />
-                <br />
-
-                <div class="checkbox">
-                    <input id="remember" type="checkbox" />
-                    <label for="remember">Remember me on this computer</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
-                </div>
-            </form>
-
-            <a href="#" class="forgot_password">Forgot password?</a>
-        </div>
-
-        <!-- Register Form -->
-        <div class="user_register">
-            <form>
-                <label>Full Name</label>
-                <input type="text" />
-                <br />
-
-                <label>Email Address</label>
-                <input type="email" />
-                <br />
-
-                <label>Password</label>
-                <input type="password" />
-                <br />
-
-                <div class="checkbox">
-                    <input id="send_updates" type="checkbox" />
-                    <label for="send_updates">Send me occasional email updates</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
-                </div>
-            </form>
         </div>
     </section>
-</div>
 
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <h2>KBKUU: Your Trusted Family Health Partner</h2>
-                    <p>KBKUU adalah aplikasi inovatif untuk mendukung kesehatan keluarga Anda, dirancang dengan antarmuka sederhana dan fitur lengkap untuk mempermudah pengelolaan kesehatan sehari-hari.</p>
-                </div>
-                  <div class="col-lg-12">
-                    <div class="white-button scroll-to-section">
-                      <a href="#services">Lebih lengkap! <i class="fab fa-google-play"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <!-- KB Methods Section -->
+    <section class="services section py-5" id="pelajari">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Kenali <span>Jenis-Jenis KB</span> untuk Keluarga Anda</h2>
+                <p class="section-subtitle">
+                    Temukan berbagai metode Keluarga Berencana (KB) yang sesuai dengan kebutuhan Anda, mulai dari KB alami hingga metode modern.
+                </p>
             </div>
-            <div class="col-lg-6">
-              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="{{asset('custom/assets/images/slider-dec.png')}}" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="services" class="services section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="section-heading wow fadeInDown">
-                    <h4>Kenali <em>Jenis-Jenis KB</em> untuk Keluarga Anda</h4>
-                    <img src="{{asset('custom/assets/images/heading-line-dec.png')}}" alt="">
-                    <p>Temukan berbagai metode Keluarga Berencana (KB) yang sesuai dengan kebutuhan Anda, mulai dari KB alami hingga metode modern. Kami hadir untuk memberikan informasi terpercaya dan memandu Anda dalam memilih solusi terbaik untuk perencanaan keluarga yang sehat dan bahagia.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="service-item first-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="" class="img-fluid service-image">
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/PIL.jpg')}}" alt="Pil KB" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-capsule"></i>
+                            </div>
+                            <h5 class="kb-card-title">Pil KB</h5>
+                            <p class="kb-card-text">
+                                Pil Kontrasepsi Berbasis Hormon yang dikonsumsi setiap hari untuk mencegah kehamilan dengan efektif.
+                            </p>
+                        </div>
                     </div>
-                    <h4>Pil KB</h4>
-                    <p>
-                        Pil Kontrasepsi Berbasis Hormon (Pil KB) adalah obat yang digunakan untuk mencegah kehamilan dikonsumsi setiap hari.
-                    </p>
                 </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="service-item second-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="" class="img-fluid service-image">
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/SUNTIK.jpg')}}" alt="Suntik KB" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-bandaid"></i>
+                            </div>
+                            <h5 class="kb-card-title">Suntik KB</h5>
+                            <p class="kb-card-text">
+                                Metode kontrasepsi hormonal melalui suntikan untuk mencegah kehamilan, tersedia dalam pilihan 1, 2, dan 3 bulan.
+                            </p>
+                        </div>
                     </div>
-                    <h4>Suntik</h4>
-                    <p>
-                        Suntik KB adalah metode kontrasepsi hormonal melalui suntikan untuk mencegah kehamilan, tersedia dalam pilihan 1 bulan, 2 bulan, dan 3 bulan.
-                    </p>
                 </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1.5s">
-                <div class="service-item third-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="" class="img-fluid service-image">
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/implant.jpg.crdownload.jpeg')}}" alt="Implan KB" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-activity"></i>
+                            </div>
+                            <h5 class="kb-card-title">Implan/Susuk</h5>
+                            <p class="kb-card-text">
+                                KB Implan adalah kontrasepsi berbasis hormon yang ditanamkan di bawah kulit lengan atas.
+                            </p>
+                        </div>
                     </div>
-                    <h4>Implan/Susuk</h4>
-                    <p>KB Implan adalah kontrasepsi berbasis hormon yang ditanamkan di bawah kulit lengan atas untuk mencegah kehamilan.</p>
                 </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2s" data-wow-delay="2s">
-                <div class="service-item fourth-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="" class="img-fluid service-image">
+
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/IUD.jpg')}}" alt="IUD/Spiral" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-circle"></i>
+                            </div>
+                            <h5 class="kb-card-title">IUD/Spiral</h5>
+                            <p class="kb-card-text">
+                                Alat kontrasepsi dalam rahim dengan masa pakai 3 hingga 10 tahun, tergantung jenisnya.
+                            </p>
+                        </div>
                     </div>
-                    <h4>IUD/Spiral</h4>
-                    <p>
-                        Spiral (IUD) adalah alat kontrasepsi dalam rahim dengan masa pakai 3 hingga 10 tahun, tergantung jenisnya.
-                    </p>
                 </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s">
-                <div class="service-item fifth-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/kondom.jpeg')}}" alt="" class="img-fluid service-image">
+
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/kondom.jpeg')}}" alt="Kondom" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h5 class="kb-card-title">Kondom</h5>
+                            <p class="kb-card-text">
+                                Alat kontrasepsi untuk mencegah kehamilan dan penyebaran penyakit menular seksual (PMS).
+                            </p>
+                        </div>
                     </div>
-                    <h4>Kondom</h4>
-                    <p>
-                        Kondom adalah alat kontrasepsi terbuat dari silikon yang digunakan untuk mencegah kehamilan dan penyebaran penyakit menular seksual (PMS).
-                    </p>
                 </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="2.5s" data-wow-delay="3s">
-                <div class="service-item sixth-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/kalender-kb.png')}}" alt="" class="img-fluid service-image">
+
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/kalender-kb.png')}}" alt="KB Kalender" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-calendar3"></i>
+                            </div>
+                            <h5 class="kb-card-title">KB Kalender</h5>
+                            <p class="kb-card-text">
+                                Metode kontrasepsi alami yang memprediksi masa subur berdasarkan siklus menstruasi.
+                            </p>
+                        </div>
                     </div>
-                    <h4>KB Kalender</h4>
-                    <p>
-                        (Metode Kalender) adalah metode kontrasepsi alami yang memprediksi masa subur berdasarkan siklus menstruasi.
-                    </p>
                 </div>
-            </div>
-            <!-- Card 7 -->
-            <div class="col-lg-6 mb-4 wow fadeInDown" data-wow-duration="3s" data-wow-delay="3.5s">
-                <div class="service-item seventh-service">
-                    <div class="mb-2">
-                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="" class="img-fluid service-image">
+
+                <!-- Card 7 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="kb-card">
+                        <img src="{{asset('assets/icon-rekomendasi/steril.png')}}" alt="Steril" class="kb-card-img">
+                        <div class="kb-card-body">
+                            <div class="kb-card-icon">
+                                <i class="bi bi-x-circle"></i>
+                            </div>
+                            <h5 class="kb-card-title">Steril / MOW</h5>
+                            <p class="kb-card-text">
+                                Prosedur kontrasepsi permanen untuk mencegah kehamilan secara total.
+                            </p>
+                        </div>
                     </div>
-                    <h4>Steril / MOW</h4>
-                    <p>
-                        KB Steril (Sterilisasi) adalah prosedur kontrasepsi permanen yang mencegah kehamilan dengan memotong atau mengikat saluran sperma (vas deferens) pada pria atau saluran telur (tuba fallopi) pada wanita.
-                    </p>
                 </div>
             </div>
-            <!-- Button Start -->
-            <div class="col-lg-12 mt-4">
-                <div class="gradien-button text-center wow fadeInDown" data-wow-delay="4s" data-wow-duration="4s">
-                    <a href="{{route('usage-category')}}" class="custom-gradient-button">
-                        <i class="fa fa-sign-in-alt"></i> Mulai
-                    </a>
-                </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="800">
+                <a href="{{route('usage-category')}}" class="btn btn-hero">
+                    <i class="bi bi-arrow-right-circle me-2"></i>Mulai Konsultasi
+                </a>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-
-
-  <footer id="newsletter">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="copyright-text">
-            <p class="text-dark text-bold">By Nesya Windra Polkesbaya © 2025. All Rights Reserved.
-          {{-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> --}}
-          </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="cta-title" data-aos="fade-up">Siap Memulai Perjalanan KB Anda?</h2>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="100">
+                Konsultasikan kebutuhan kontrasepsi Anda dengan bidan berpengalaman sekarang.
+            </p>
+            <a href="{{route('usage-category')}}" class="btn btn-cta" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-chat-dots me-2"></i>Mulai Sekarang
+            </a>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-text mb-0">
+                        <i class="bi bi-heart-pulse-fill me-1"></i>
+                        By Nesya Polkesbaya | &copy; 2025 KBKUU. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="{{asset('custom/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('custom/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('custom/assets/js/owl-carousel.js')}}"></script>
-  <script src="{{asset('custom/assets/js/animation.js')}}"></script>
-  <script src="{{asset('custom/assets/js/imagesloaded.js')}}"></script>
-  <script src="{{asset('custom/assets/js/popup.js')}}"></script>
-  <script src="{{asset('custom/assets/js/custom.js')}}"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out'
+        });
+    </script>
 </body>
+
 </html>
