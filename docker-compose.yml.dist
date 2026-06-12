@@ -1,0 +1,68 @@
+# Docker Setup untuk KBBKU
+
+## Cara Menjalankan
+
+1. **Copy file environment:**
+   ```bash
+   cp .env.docker .env
+   ```
+
+2. **Generate application key:**
+   ```bash
+   docker-compose run --rm app php artisan key:generate
+   ```
+
+3. **Jalankan container:**
+   ```bash
+   docker-compose up -d
+   ```
+
+4. **Jalankan migrasi database:**
+   ```bash
+   docker-compose run --rm app php artisan migrate
+   ```
+
+5. **Build assets (npm):**
+   ```bash
+   docker-compose run --rm -u root app npm install
+   docker-compose run --rm -u root app npm run build
+   ```
+
+## Services
+
+| Service | Port | Description |
+|---------|------|-------------|
+| app | 9000 | PHP-FPM + Queue Worker |
+| nginx | 80 | Web Server |
+| db | 3306 | MySQL 8.0 |
+| redis | 6379 | Redis Cache |
+
+## Perintah Berguna
+
+```bash
+# Stop containers
+docker-compose down
+
+# View logs
+docker-compose logs -f app
+
+# SSH ke container
+docker-compose exec app sh
+
+# Rebuild tanpa cache
+docker-compose build --no-cache
+
+# Restart services
+docker-compose restart app
+```
+
+## Production Mode
+
+Untuk production, edit `docker-compose.yml`:
+- Set `APP_ENV=production`
+- Set `APP_DEBUG=false`
+- Ganti `composer install` menjadi `composer install --no-dev`
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+```
